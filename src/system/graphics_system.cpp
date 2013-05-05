@@ -1,9 +1,12 @@
-//
-// author: Benjamin Adamson and Wesley Kos
-// TODO:
 #include "..\engine.hpp"
 #include "graphics_system.hpp"
 
+//===----------------------------------------------------------------------===//
+//
+// The function update_screen() is responsible for drawing the screen within the
+// window.
+//
+//===----------------------------------------------------------------------===//
 void
 rem::system::graphics_system::update_screen(rem::engine &engine)
 {

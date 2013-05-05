@@ -1,9 +1,11 @@
-//
-// author: Benjamin Adamson and Wesley Kos
-// TODO:
 #include "engine.hpp"
 #include <string>
 
+//===----------------------------------------------------------------------===//
+//
+// The engine constructor. Initializes the Window member structure.
+//
+//===----------------------------------------------------------------------===//
 rem::engine::engine(void)
 {
   const std::string window_title("Remnant Title Text");

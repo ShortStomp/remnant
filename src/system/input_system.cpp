@@ -1,6 +1,9 @@
+//===----------------------------------------------------------------------===//
 //
-// author: Benjamin Adamson and Wesley Kos
-// TODO:
+// The function process_input() is responsible for processing all events and routing
+// all input events to their correct targets (components).
+//
+//===----------------------------------------------------------------------===//
 #include <SFML\Window\Event.hpp>
 #include "..\engine.hpp"
 #include "input_system.hpp"

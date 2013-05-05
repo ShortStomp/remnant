@@ -1,6 +1,3 @@
-//
-// author: Benjamin Adamson and Wesley Kos
-// TODO
 #include <SFML\Window\Event.hpp>
 #include "engine.hpp"
 #include "system\input_system.hpp"
@@ -8,6 +5,13 @@
 #include "game.hpp"
 
 
+//===----------------------------------------------------------------------===//
+//
+// The main game loop. When this function exits the game is over. The game loop
+// iterates over the different systems in order, processing input, updating ai,
+// drawing the screen, playing audio, etc...
+//
+//===----------------------------------------------------------------------===///
 void
 rem::game::game_loop(
   rem::engine &engine

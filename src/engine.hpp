@@ -1,7 +1,18 @@
+//===-----------------------------------------------------------------------===//
 //
-// author: Benjamin Adamson and Wesley Kos
-// Entry point to the application. Simply initializes the engine and then passes 
-// control to the game loop.
+//                     The Remnant Source code
+//
+// Authors:
+//
+//    Benjamin Adamson (adamson.benjamin@gmail.com)
+//    Wesley Kos (kos.wesley@gmail.com)
+//
+//===----------------------------------------------------------------------===//
+//
+// The primary data-structure used throughout the game. Contains data-structures
+// needed throughout the game.
+//
+//===----------------------------------------------------------------------===///
 #ifndef _ENGINE_HPP_
 #define _ENGINE_HPP_
 #include <SFML\Graphics\RenderWindow.hpp>
