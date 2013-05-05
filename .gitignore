@@ -11,3 +11,11 @@
 *.lai
 *.la
 *.a
+
+# visual studio files
+*.opensdf
+*.sdf
+*.suo
+
+# ignore the entier ./bin/ directory and all it's sub-directories.
+bin/*
