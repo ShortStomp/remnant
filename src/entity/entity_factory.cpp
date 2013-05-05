@@ -25,4 +25,5 @@ rem::entity_factory::get(void) const
 
   // create the entity using our unique id
   entity entity_instance(entity_id);
+  return entity_instance;
 }
