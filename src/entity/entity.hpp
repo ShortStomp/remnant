@@ -1,6 +1,18 @@
+//===-----------------------------------------------------------------------===//
 //
-// author: Benjamin Adamson and Wesley Kos
-// A unique identifier paired with a collection of components.
+//                     The Remnant Source code
+//
+// Authors:
+//
+//    Benjamin Adamson (adamson.benjamin@gmail.com)
+//    Wesley Kos (kos.wesley@gmail.com)
+//
+//===----------------------------------------------------------------------===//
+//
+// This file defines the interface for an "entity." An entity can be thought of a
+// unique identifier paired with a collection of components.
+//
+//===----------------------------------------------------------------------===//
 #ifndef _ENTITY_HPP
 #define _ENTITY_HPP
 #include <vector>
@@ -33,4 +45,4 @@ namespace rem
     void remove_component(void); // TODO: determine how this should work.
   };
 }
-#endif // _ENTITY_HPP definition
+#endif // _ENTITY_HPP_ definition

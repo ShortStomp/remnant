@@ -5,7 +5,15 @@
 // initialize our static member variable
 decltype(rem::entity_factory::_id_counter) rem::entity_factory::_id_counter = 1U;
 
-rem::entity_factory::entity_factory(void)
+
+//===----------------------------------------------------------------------===//
+//
+// the member function get() gets a unique id using the static internal _id_counter member
+// of the entity_factory class. With this id the entity is constructed and returned.
+//
+//===----------------------------------------------------------------------===//
+rem::entity
+rem::entity_factory::get(void) const
 {
   using namespace rem;
 
