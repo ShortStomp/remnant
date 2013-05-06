@@ -27,7 +27,7 @@ namespace rem
   public:
     
     // methods
-    entity get(void) const;
+    entity* get(void) const;
   };
 }
 #endif // _ENTITY_FACTORY_HPP definition

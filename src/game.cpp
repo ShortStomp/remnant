@@ -18,7 +18,7 @@ rem::game::game_loop(
   )
 {
   bool finished = false;
-
+  
   while(finished == false) {
     
     rem::system::input_system::process_input(engine, finished);
