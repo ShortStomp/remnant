@@ -42,12 +42,6 @@
     <ClCompile Include="component\input_component.cpp">
       <Filter>component</Filter>
     </ClCompile>
-    <ClCompile Include="messages\keypress_message.cpp">
-      <Filter>messages</Filter>
-    </ClCompile>
-    <ClCompile Include="messages\move_message.cpp">
-      <Filter>messages</Filter>
-    </ClCompile>
     <ClCompile Include="messages\message.cpp">
       <Filter>messages</Filter>
     </ClCompile>
