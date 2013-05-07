@@ -12,7 +12,7 @@ decltype(rem::entity_factory::_id_counter) rem::entity_factory::_id_counter = 1U
 // of the entity_factory class. With this id the entity is constructed and returned.
 //
 //===----------------------------------------------------------------------===//
-rem::entity
+rem::entity*
 rem::entity_factory::get(void) const
 {
   using namespace rem;
@@ -23,9 +23,11 @@ rem::entity_factory::get(void) const
   // increment the internal counter
   ++_id_counter;
 
+  // TEST CODE: Changed to returning a pointer, want to revert it to return by value
+  
   // create the entity using our unique id
-  entity entity_instance(entity_id);
-
+  //entity entity_instance(entity_id);
+  auto entity_instance = new entity(entity_id);
   // TODO: Added this so it would run.
   return entity_instance;
 }

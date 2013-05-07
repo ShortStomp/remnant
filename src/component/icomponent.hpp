@@ -18,6 +18,8 @@
 //===----------------------------------------------------------------------===///
 #ifndef _ICOMPONENT_HPP_
 #define _ICOMPONENT_HPP_
+#include "..\messages\message.hpp"
+
 namespace rem
 {
   // forward declarations
@@ -30,6 +32,8 @@ namespace rem
 
     // constructors
     icomponent(void);
+
+    virtual void process_message(const message message) = 0;
   };
 }
-#endif
+#endif // _ICOMPONENT_HPP_ definition
