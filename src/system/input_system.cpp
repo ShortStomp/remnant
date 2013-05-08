@@ -47,6 +47,7 @@ on_key_press(rem::input_component *const input_component_ptr)
   }
 }
 
+
 //===----------------------------------------------------------------------===//
 //
 // The function process_input() is responsible for processing all events and routing
@@ -59,9 +60,7 @@ rem::input_system::process_input(rem::engine &engine, bool &game_finished)
   sf::Event event_buffer;
   while(engine.Window.pollEvent(event_buffer)) {
 
-    if(event_buffer.type == sf::Event::KeyPressed) {
-      std::for_each(engine.Input_Component.begin(), engine.Input_Component.end(), on_key_press);
-    }
+    std::for_each(engine.Input_Component.begin(), engine.Input_Component.end(), on_key_press);
 
     if(event_buffer.type == sf::Event::Closed) {
       game_finished = true;

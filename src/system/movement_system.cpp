@@ -1,5 +1,8 @@
+#include <SFML\System\Vector2.hpp>
 #include "movement_system.hpp"
 #include "../messages/move_message.hpp"
+#include "../component/transform_component.hpp"
+#include "../component/movement_component.hpp"
 
 //===----------------------------------------------------------------------===//
 //
@@ -7,7 +10,7 @@
 //
 //===----------------------------------------------------------------------===//
 void
-rem::movement_system::move_entity(rem::transform_component &transform, const rem::move_message move_message)
+rem::movement_system::move_entity(const movement_component &movement, transform_component &transform)
 {
-  transform.move(move_message.X_Distance, move_message.Y_Distance);
+  transform.move(movement.Velocity);
 }

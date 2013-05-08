@@ -2,12 +2,12 @@
 
 //===----------------------------------------------------------------------===//
 //
-// The icomponent constructor initializes the member variable
-// Parent_Ptr to nullptr.
+// The icomponent constructor initializes the Type and Parent_Ptr members.
 //
 //===----------------------------------------------------------------------===//
-rem::icomponent::icomponent(void)
-  : Parent_ptr(nullptr)
+rem::icomponent::icomponent(const int component_type)
+  : Component_Type(component_type),
+  Parent_ptr(nullptr)
 {
 
 }

@@ -18,7 +18,7 @@
 //===----------------------------------------------------------------------===///
 #ifndef _ICOMPONENT_HPP_
 #define _ICOMPONENT_HPP_
-#include "..\messages\message.hpp"
+#include "component_registry.hpp"
 
 namespace rem
 {
@@ -28,12 +28,13 @@ namespace rem
   struct icomponent
   {
     // members
-    entity *Parent_ptr;
+    const int   Component_Type;
+    entity      *Parent_ptr;
+
+  protected:
 
     // constructors
-    icomponent(void);
-
-    virtual void process_message(const message message) = 0;
+    icomponent(const int component_type);
   };
 }
 #endif // _ICOMPONENT_HPP_ definition

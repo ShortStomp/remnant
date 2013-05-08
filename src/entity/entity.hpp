@@ -20,33 +20,39 @@
 #include "entity_id.hpp"
 #include "..\messages\message.hpp"
 #include "..\component\transform_component.hpp"
+#include "entity_helpers.hpp"
 
 namespace rem
 {
   // forward declarations
   struct icomponent;
-  
+
   class entity
   {
     // friend declarations
     friend class entity_factory;
 
+    template<typename T>
+    friend T* entity_helpers::get_component(entity *const entity_ptr);
+    
     // members
     const entity_id _id;
-    transform_component *_transform_component;
     std::vector<icomponent*> _components;
 
     // constructors
     explicit entity(const entity_id id);
 
   public:
-	// members
-	std::queue<message> Message_Queue;
-  transform_component Transform;
+	
+    // members
+	  std::queue<message> Message_Queue;
+    transform_component Transform;
     
-	// methods
+	  // methods
     void add_component(icomponent *const component_ptr);
     void remove_component(void); // TODO: determine how this should work.
+
+    template<typename T> T* get_component(void);
 
   };
 }

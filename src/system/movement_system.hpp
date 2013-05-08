@@ -17,16 +17,17 @@
 #ifndef _MOVEMENT_SYSTEM_HPP_
 #define _MOVEMENT_SYSTEM_HPP_
 #include "../messages/move_message.hpp"
-#include "../component/transform_component.hpp"
 
 namespace rem
 {
   // forward declarations
   class entity;
+  struct transform_component;
+  struct movement_component;
 
 namespace movement_system
 {
-  void move_entity(transform_component &transform, const rem::move_message message);
+  void move_entity(const movement_component &movement, transform_component &transform);
 }
 }
 #endif

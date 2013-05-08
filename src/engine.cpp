@@ -1,8 +1,7 @@
 #include <string>
 #include "engine.hpp"
 #include "entity\entity_factory.hpp"
-#include "component\input_component.hpp"
-#include "component\sprite_component.hpp"
+#include "component\component_factory.hpp"
 
 //===----------------------------------------------------------------------===//
 //
@@ -20,23 +19,34 @@ rem::engine::engine(void)
 
 
   // TEST CODE: Following code is for testing purposes only (referencing entiy_factory and input_component)
-  entity_factory factory;
-  auto instance = factory.get();
-  
-  auto inputcomponent = new input_component;
-  instance->add_component(inputcomponent);
-  Entities.emplace_back(instance);
+  entity_factory efactory;
+  auto entity_instance = efactory.get();
 
-  Input_Component.emplace_back(inputcomponent);
+  component_factory<input_component> input_cfactory;
   
-  auto spritecomponent = new sprite_component;
-  const auto load_result = spritecomponent->Texture.loadFromFile("../assets/grassd.gif");
+  auto inputcomponent_ptr = input_cfactory.get();
+  entity_instance->add_component(inputcomponent_ptr);
+  Entities.emplace_back(entity_instance);
+
+  Input_Component.emplace_back(inputcomponent_ptr);
+
+  component_factory<movement_component> move_cfactory;
+
+  auto move_component_ptr = move_cfactory.get();
+  move_component_ptr->Velocity.x = 2.2f;
+  move_component_ptr->Velocity.y = 1.1f;
+  entity_instance->add_component(move_component_ptr);
+ 
+  component_factory<sprite_component> sprite_cfactory;
+  
+  auto spritecomponent_ptr = sprite_cfactory.get();
+  const auto load_result = spritecomponent_ptr->Texture.loadFromFile("../assets/grassd.gif");
   if(load_result == false) {
     // file failed to load
     __debugbreak();
   }
 
-  spritecomponent->Sprite.setTexture(spritecomponent->Texture);
-  instance->add_component(spritecomponent);
-  Sprite_Components.emplace_back(spritecomponent);
+  spritecomponent_ptr->Sprite.setTexture(spritecomponent_ptr->Texture);
+  entity_instance->add_component(spritecomponent_ptr);
+  Sprite_Components.emplace_back(spritecomponent_ptr);
 }

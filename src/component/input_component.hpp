@@ -15,7 +15,6 @@
 //===----------------------------------------------------------------------===///
 #ifndef _INPUT_COMPONENT_HPP_
 #define _INPUT_COMPONENT_HPP_
-
 #include "icomponent.hpp"
 
 namespace rem
@@ -26,7 +25,11 @@ namespace rem
   struct input_component :
     public icomponent
   {
-    virtual void process_message(const message message) override;
+    // static members
+    static const auto COMPONENT_TYPE = COMPONENT_TYPE_INPUT;
+
+    // constructors
+    input_component(void) : icomponent(COMPONENT_TYPE) { }
   };
 }
 #endif // _INPUT_COMPONENT_HPP_ definition

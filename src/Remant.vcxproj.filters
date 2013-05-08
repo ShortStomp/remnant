@@ -36,9 +36,6 @@
     <ClCompile Include="entity\entity.cpp">
       <Filter>entity</Filter>
     </ClCompile>
-    <ClCompile Include="component\input_component.cpp">
-      <Filter>component</Filter>
-    </ClCompile>
     <ClCompile Include="messages\message.cpp">
       <Filter>messages</Filter>
     </ClCompile>
@@ -48,7 +45,7 @@
     <ClCompile Include="system\movement_system.cpp">
       <Filter>system</Filter>
     </ClCompile>
-    <ClCompile Include="component\sprite_component.cpp">
+    <ClCompile Include="component\movement_component.cpp">
       <Filter>component</Filter>
     </ClCompile>
   </ItemGroup>
@@ -94,5 +91,25 @@
     <ClInclude Include="component\sprite_component.hpp">
       <Filter>component</Filter>
     </ClInclude>
+    <ClInclude Include="component\movement_component.hpp">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="entity\entity_helpers.hpp">
+      <Filter>entity</Filter>
+    </ClInclude>
+    <ClInclude Include="component\component_factory.hpp">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="component\component_factory.inc">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="component\component_registry.hpp">
+      <Filter>component</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="entity\entity_helpers.inc">
+      <Filter>entity</Filter>
+    </None>
   </ItemGroup>
 </Project>

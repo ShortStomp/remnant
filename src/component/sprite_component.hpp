@@ -26,13 +26,18 @@ namespace rem
   struct sprite_component :
     public icomponent
   {
+    // static members
+    static const auto COMPONENT_TYPE = COMPONENT_TYPE_SPRITE;
+
     // members
     sf::Sprite Sprite;
     sf::Texture Texture;  // TODO: textures are heavy-weight and should not exist on each sprite_component
                           // but need to be managed else-where.
 
-    // methods
-    virtual void process_message(const message message) override;
+    // constructors
+    sprite_component(void) : icomponent(COMPONENT_TYPE) { }
   };
+
+  
 }
 #endif
