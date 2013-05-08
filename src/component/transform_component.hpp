@@ -23,8 +23,6 @@ namespace rem
   struct transform_component :
     public sf::Transformable
   {
-    // members
-    sf::Transformable transform;
   };
 }
 #endif // _TRANSFORM_COMPONENT_HPP_
