@@ -36,9 +36,6 @@
     <ClCompile Include="entity\entity.cpp">
       <Filter>entity</Filter>
     </ClCompile>
-    <ClCompile Include="component\transform_component.cpp">
-      <Filter>component</Filter>
-    </ClCompile>
     <ClCompile Include="component\input_component.cpp">
       <Filter>component</Filter>
     </ClCompile>

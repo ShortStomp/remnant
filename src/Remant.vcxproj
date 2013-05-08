@@ -118,7 +118,6 @@
     <ClCompile Include="component\icomponent.cpp" />
     <ClCompile Include="component\input_component.cpp" />
     <ClCompile Include="component\sprite_component.cpp" />
-    <ClCompile Include="component\transform_component.cpp" />
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="entity\entity.cpp" />
     <ClCompile Include="entity\entity_factory.cpp" />

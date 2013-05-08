@@ -16,17 +16,15 @@
 #ifndef _TRANSFORM_COMPONENT_HPP_
 #define _TRANSFORM_COMPONENT_HPP_
 #include <SFML\System\Vector2.hpp>
+#include <SFML\Graphics\Transformable.hpp>
+
 namespace rem
 {
-  struct transform_component
+  struct transform_component :
+    public sf::Transformable
   {
     // members
-    float Rotation;
-    sf::Vector2f Position;
-    sf::Vector2f Scale;
-
-    // constructors
-    transform_component(void);
+    sf::Transformable transform;
   };
 }
 #endif // _TRANSFORM_COMPONENT_HPP_
