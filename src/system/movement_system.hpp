@@ -17,6 +17,7 @@
 #ifndef _MOVEMENT_SYSTEM_HPP_
 #define _MOVEMENT_SYSTEM_HPP_
 #include "../messages/move_message.hpp"
+#include "../component/transform_component.hpp"
 
 namespace rem
 {
@@ -25,7 +26,7 @@ namespace rem
 
 namespace movement_system
 {
-  void move_entity(rem::entity &entity, const rem::move_message message);
+  void move_entity(transform_component &transform, const rem::move_message message);
 }
 }
 #endif
