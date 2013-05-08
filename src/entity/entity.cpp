@@ -1,3 +1,4 @@
+#include "../component/icomponent.hpp"
 #include "entity.hpp"
 
 //===----------------------------------------------------------------------===//
@@ -30,6 +31,24 @@ rem::entity::add_component(
     return;
   }
 
+  // set the components parent to the entity
+  component_ptr->Parent_ptr = this;
+
   // add the ptr to this entity
   _components.emplace_back(component_ptr);
+}
+
+
+//===----------------------------------------------------------------------===//
+//
+// Remves the component from the entity.
+// TODO: flush out this method, currently we need to decide if we take a pointer
+// to a component, or an containing it's type.
+//
+//===----------------------------------------------------------------------===//
+void
+rem::entity::remove_component(
+  void
+  )
+{
 }

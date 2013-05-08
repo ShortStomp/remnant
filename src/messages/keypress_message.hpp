@@ -22,6 +22,7 @@ namespace rem
 {
   struct keypress_message
   {
+    // members
     sf::Keyboard::Key Key;
   };
 }

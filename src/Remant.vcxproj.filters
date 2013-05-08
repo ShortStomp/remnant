@@ -45,6 +45,15 @@
     <ClCompile Include="messages\message.cpp">
       <Filter>messages</Filter>
     </ClCompile>
+    <ClCompile Include="system\message_system.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="system\movement_system.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="component\sprite_component.cpp">
+      <Filter>component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.hpp" />
@@ -81,6 +90,15 @@
     </ClInclude>
     <ClInclude Include="messages\message.hpp">
       <Filter>messages</Filter>
+    </ClInclude>
+    <ClInclude Include="system\message_system.hpp">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="system\movement_system.hpp">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="component\sprite_component.hpp">
+      <Filter>component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

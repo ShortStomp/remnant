@@ -22,8 +22,9 @@
 namespace rem
 {
   // forward declarations
-  struct input_component;
   class entity;
+  struct input_component;
+  struct sprite_component;
 
 struct engine
 {
@@ -32,6 +33,7 @@ struct engine
   sf::RenderWindow Window;
   std::vector<entity*> Entities;
   std::vector<input_component*> Input_Component;
+  std::vector<sprite_component*> Sprite_Components;
 
   //
   // constructor declarations

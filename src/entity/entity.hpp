@@ -13,18 +13,18 @@
 // unique identifier paired with a collection of components.
 //
 //===----------------------------------------------------------------------===//
-#ifndef _ENTITY_HPP
-#define _ENTITY_HPP
+#ifndef _ENTITY_HPP_
+#define _ENTITY_HPP_
 #include <vector>
 #include <queue>
 #include "entity_id.hpp"
 #include "..\messages\message.hpp"
+#include "..\component\transform_component.hpp"
 
 namespace rem
 {
   // forward declarations
   struct icomponent;
-  struct transform_component;
   
   class entity
   {
@@ -42,6 +42,7 @@ namespace rem
   public:
 	// members
 	std::queue<message> Message_Queue;
+  transform_component Transform;
     
 	// methods
     void add_component(icomponent *const component_ptr);

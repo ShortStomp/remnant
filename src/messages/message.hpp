@@ -22,21 +22,25 @@ namespace rem
 {
 
   // enum declarations
-  enum message_type { KEYPRESS_MESSAGE_TYPE = 0, MOVE_MESSAGE_TYPE, };
+  enum message_type {
+    MESSAGE_TYPE_KEYPRESS = 0,
+    MESSAGE_TYPE_MOVE,
+  };
 
   // structure declarations
   struct message final
   {
     // members
    message_type Type;
-   union {
+
+    union {
      move_message Move_Message;
      keypress_message Keypress_Message;
    };
-    // constructors
-    message(const message_type type); 
 
-    // methods
+   // constructors
+  message(const message_type type); 
+
   };
 }
 

@@ -2,6 +2,7 @@
 #include "engine.hpp"
 #include "system\input_system.hpp"
 #include "system\graphics_system.hpp"
+#include "system\message_system.hpp"
 #include "game.hpp"
 
 
@@ -20,9 +21,11 @@ rem::game::game_loop(
   bool finished = false;
   
   while(finished == false) {
-    
-    rem::system::input_system::process_input(engine, finished);
 
-    rem::system::graphics_system::update_screen(engine);
+    rem::message_system::process_messages(engine);
+    
+    rem::input_system::process_input(engine, finished);
+
+    rem::graphics_system::update_screen(engine);
   }
 }

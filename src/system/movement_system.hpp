@@ -14,14 +14,18 @@
 // system contains no state.
 //
 //===----------------------------------------------------------------------===///
+#ifndef _MOVEMENT_SYSTEM_HPP_
+#define _MOVEMENT_SYSTEM_HPP_
+#include "../messages/move_message.hpp"
+
 namespace rem
 {
-  //
   // forward declarations
-  struct engine;
+  class entity;
 
-namespace graphics_system
+namespace movement_system
 {
-  void update_screen(rem::engine &engine);
+  void move_entity(rem::entity &entity, const rem::move_message message);
 }
 }
+#endif

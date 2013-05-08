@@ -9,19 +9,23 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// The graphics system is the system responsible for drawing everything onto the
-// screen. The graphics system is a collection of free-standing functions, the graphics-
-// system contains no state.
+// The message system is responsible for processing message queue's on entities.
+// As the game executes messages are given to entities. These messages are processed
+// via the message system.
 //
 //===----------------------------------------------------------------------===///
+#ifndef _MESSAGE_SYSTEM_HPP_ 
+#define _MESSAGE_SYSTEM_HPP_
+
 namespace rem
 {
-  //
   // forward declarations
   struct engine;
 
-namespace graphics_system
+namespace message_system
 {
-  void update_screen(rem::engine &engine);
+  void process_messages(rem::engine &engine);
 }
 }
+
+#endif // _MESSAGE_SYSTEM_HPP_

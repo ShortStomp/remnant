@@ -16,21 +16,20 @@
 //===----------------------------------------------------------------------===///
 #ifndef _INPUT_SYSTEM_HPP_
 #define _INPUT_SYSTEM_HPP_
-// forward declarations
+#include "../messages/keypress_message.hpp"
+
 namespace rem
 {
   //
   // forward declarations
   struct engine;
 
-namespace system
-{
-
 namespace input_system
 {
   void process_input(rem::engine &engine, bool &game_finished);
+
+  void process_keypress_message(const rem::keypress_message keypress_message, rem::entity *const entity_ptr);
 }
 
-}
 }
 #endif // _INPUT_SYSTEM_HPP_ definition

@@ -10,7 +10,7 @@
 void 
 rem::input_component::process_message(const message message) 
 {
-  if(message.Type == KEYPRESS_MESSAGE_TYPE) {
+  if(message.Type == MESSAGE_TYPE_KEYPRESS) {
     ////keypress_message* keypress = static_cast<rem::keypress_message*>(message);
     //if(message->Key == sf::Keyboard::W) {
     //  // Generate Move message and send to entity

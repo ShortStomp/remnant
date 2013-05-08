@@ -20,7 +20,9 @@ namespace rem
 {
   struct move_message
   {
-     float distance;
+    // members
+    float X_Distance;
+    float Y_Distance;
   };
 }
 #endif // _MOVE_MESSAGE_HPP_
