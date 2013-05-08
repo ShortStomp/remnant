@@ -69,15 +69,3 @@ rem::input_system::process_input(rem::engine &engine, bool &game_finished)
   }
 
 }
-
-
-void
-rem::input_system::process_keypress_message(const rem::keypress_message keypress_message, rem::entity *const entity_ptr)
-{
-  // when the entity receives a key-press message, send it a move message.
-  rem::message move_message(MESSAGE_TYPE_MOVE);
-  move_message.Move_Message.X_Distance = 10.0f;
-  move_message.Move_Message.Y_Distance = 2.0f;
-
-  entity_ptr->Message_Queue.emplace(move_message);
-}

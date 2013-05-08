@@ -76,9 +76,6 @@
     <ClInclude Include="component\transform_component.hpp">
       <Filter>component</Filter>
     </ClInclude>
-    <ClInclude Include="messages\keypress_message.hpp">
-      <Filter>messages</Filter>
-    </ClInclude>
     <ClInclude Include="component\input_component.hpp">
       <Filter>component</Filter>
     </ClInclude>

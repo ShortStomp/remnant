@@ -141,7 +141,6 @@
     <ClInclude Include="entity\entity_id.hpp" />
     <ClInclude Include="game.hpp" />
     <ClInclude Include="messages\message.hpp" />
-    <ClInclude Include="messages\keypress_message.hpp" />
     <ClInclude Include="messages\move_message.hpp" />
     <ClInclude Include="system\graphics_system.hpp" />
     <ClInclude Include="system\input_system.hpp" />

@@ -15,7 +15,6 @@
 #ifndef _MESSAGE_HPP_
 #define _MESSAGE_HPP_
 
-#include "keypress_message.hpp"
 #include "move_message.hpp"
 
 namespace rem
@@ -23,8 +22,7 @@ namespace rem
 
   // enum declarations
   enum message_type {
-    MESSAGE_TYPE_KEYPRESS = 0,
-    MESSAGE_TYPE_MOVE,
+    MESSAGE_TYPE_MOVE = 0,
   };
 
   // structure declarations
@@ -35,7 +33,6 @@ namespace rem
 
     union {
      move_message Move_Message;
-     keypress_message Keypress_Message;
    };
 
    // constructors

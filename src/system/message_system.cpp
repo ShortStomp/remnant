@@ -17,11 +17,8 @@ void process_message(const rem::message message, rem::entity *const entity_ptr)
 {
   using namespace rem;
 
-  if(message.Type == MESSAGE_TYPE_KEYPRESS) {
-    rem::input_system::process_keypress_message(message.Keypress_Message, entity_ptr);
-  }
-  else if(message.Type == MESSAGE_TYPE_MOVE) {
-    movement_system::move_entity(*entity_ptr, message.Move_Message);
+  if(message.Type == MESSAGE_TYPE_MOVE) {
+    movement_system::move_entity(entity_ptr->Transform, message.Move_Message);
   }
 }
 
