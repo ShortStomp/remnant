@@ -9,20 +9,23 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// 
+// The message system is responsible for processing message queue's on entities.
+// As the game executes messages are given to entities. These messages are processed
+// via the message system.
 //
 //===----------------------------------------------------------------------===///
-
-#ifndef _KEYPRESS_MESSAGE_
-#define _KEYPRESS_MESSAGE_
-
-#include <SFML\Window\Event.hpp>
+#ifndef _MESSAGE_SYSTEM_HPP_ 
+#define _MESSAGE_SYSTEM_HPP_
 
 namespace rem
 {
-  struct keypress_message
-  {
-    sf::Keyboard::Key Key;
-  };
+  // forward declarations
+  struct engine;
+
+namespace message_system
+{
+  void process_messages(rem::engine &engine);
 }
-#endif // _KEYPRESS_MESSAGE_ definition
+}
+
+#endif // _MESSAGE_SYSTEM_HPP_

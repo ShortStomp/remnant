@@ -9,20 +9,26 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// The transform component is the aggregate of an entity's Rotation, Position,
-// and Scale.
 //
 //===----------------------------------------------------------------------===//
-#ifndef _TRANSFORM_COMPONENT_HPP_
-#define _TRANSFORM_COMPONENT_HPP_
+#ifndef _MOVEMENT_COMPONENT_HPP_
+#define _MOVEMENT_COMPONENT_HPP_
 #include <SFML\System\Vector2.hpp>
-#include <SFML\Graphics\Transformable.hpp>
-
+#include "icomponent.hpp"
 namespace rem
 {
-  struct transform_component :
-    public sf::Transformable
+  struct movement_component :
+    public icomponent
   {
+    // static members
+    static const auto COMPONENT_TYPE = COMPONENT_TYPE_MOVEMENT;
+
+    // members
+    sf::Vector2f Velocity;
+    sf::Vector2f Acceleration;
+
+    // constructors
+    movement_component(void);
   };
 }
-#endif // _TRANSFORM_COMPONENT_HPP_
+#endif

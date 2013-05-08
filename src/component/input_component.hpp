@@ -15,7 +15,6 @@
 //===----------------------------------------------------------------------===///
 #ifndef _INPUT_COMPONENT_HPP_
 #define _INPUT_COMPONENT_HPP_
-
 #include "icomponent.hpp"
 
 namespace rem
@@ -23,8 +22,14 @@ namespace rem
   //forward declaration
   struct message;
 
-  struct input_component : public icomponent {
-    virtual void process_message(const message message) override;
+  struct input_component :
+    public icomponent
+  {
+    // static members
+    static const auto COMPONENT_TYPE = COMPONENT_TYPE_INPUT;
+
+    // constructors
+    input_component(void) : icomponent(COMPONENT_TYPE) { }
   };
 }
 #endif // _INPUT_COMPONENT_HPP_ definition
