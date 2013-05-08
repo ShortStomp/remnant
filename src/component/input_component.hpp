@@ -23,7 +23,9 @@ namespace rem
   //forward declaration
   struct message;
 
-  struct input_component : public icomponent {
+  struct input_component :
+    public icomponent
+  {
     virtual void process_message(const message message) override;
   };
 }
