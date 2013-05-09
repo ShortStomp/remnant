@@ -17,9 +17,11 @@ rem::graphics_system::update_screen(rem::engine &engine)
 
   // draw everything here
   for(const auto it : engine.Sprite_Components) {
-    it->Sprite.setPosition(it->Parent_ptr->Transform.getPosition());
-    it->Sprite.setRotation(it->Parent_ptr->Transform.getRotation());
-    it->Sprite.setScale(it->Parent_ptr->Transform.getScale());
+    const auto entity_ptr = it->Entity_Pointer; // alias
+
+    it->Sprite.setPosition(entity_ptr->Transform.getPosition());
+    it->Sprite.setRotation(entity_ptr->Transform.getRotation());
+    it->Sprite.setScale(entity_ptr->Transform.getScale());
     engine.Window.draw(it->Sprite);
   }
 

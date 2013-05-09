@@ -36,12 +36,12 @@ rem::movement_system::move_entities(engine &engine)
 {
   for(const auto it : engine.Movement_Components) {
 
-    if(it->Parent_ptr == nullptr) { // error
+    if(it->Entity_Pointer == nullptr) { // error
       continue;
     }
 
-    auto &entity = *it->Parent_ptr; // alias
-    auto &movement = *it;           // alias
+    auto &entity = *it->Entity_Pointer; // alias
+    auto &movement = *it;               // alias
     upate_transform_from_movement(engine.Elapsed_Time, entity.Transform, movement);
   }
 }

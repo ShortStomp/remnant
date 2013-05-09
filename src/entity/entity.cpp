@@ -32,7 +32,7 @@ rem::entity::add_component(
   }
 
   // set the components parent to the entity
-  component_ptr->Parent_ptr = this;
+  component_ptr->Entity_Pointer = this;
 
   // add the ptr to this entity
   _components.emplace_back(component_ptr);

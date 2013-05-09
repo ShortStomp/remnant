@@ -17,6 +17,7 @@
 
 #include "move_message.hpp"
 #include "acceleration_message.hpp"
+#include "rotation_message.hpp"
 
 namespace rem
 {
@@ -25,6 +26,7 @@ namespace rem
   enum message_type {
     MESSAGE_TYPE_MOVE = 0,
     MESSAGE_TYPE_ACCELERATION,
+    MESSAGE_TYPE_ROTATION,
   };
 
   // structure declarations
@@ -36,7 +38,7 @@ namespace rem
     union {
      move_message Move_Message;
      acceleration_message Accelerate_Message;
-
+     rotation_message Rotation_Message;
    };
 
    // constructors

@@ -7,7 +7,7 @@
 //===----------------------------------------------------------------------===//
 rem::icomponent::icomponent(const int component_type)
   : Component_Type(component_type),
-  Parent_ptr(nullptr)
+  Entity_Pointer(nullptr)
 {
 
 }

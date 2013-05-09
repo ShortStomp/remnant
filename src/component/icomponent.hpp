@@ -29,7 +29,7 @@ namespace rem
   {
     // members
     const int   Component_Type;
-    entity      *Parent_ptr;
+    entity      *Entity_Pointer;
 
   protected:
 

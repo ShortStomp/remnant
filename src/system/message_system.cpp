@@ -35,6 +35,9 @@ void process_message(const rem::message message, rem::entity *const entity_ptr)
       move_ptr->Acceleration.y += message.Accelerate_Message.Y_Acceleration;
     }
   }
+  else if(message.Type == MESSAGE_TYPE_ROTATION) {
+    entity_ptr->Transform.rotate(message.Rotation_Message.Angle);
+  }
 
 }
 

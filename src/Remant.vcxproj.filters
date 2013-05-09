@@ -109,6 +109,9 @@
     <ClInclude Include="messages\acceleration_message.hpp">
       <Filter>messages</Filter>
     </ClInclude>
+    <ClInclude Include="messages\rotation_message.hpp">
+      <Filter>messages</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="entity\entity_helpers.inc">

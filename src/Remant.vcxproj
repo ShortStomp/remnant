@@ -149,6 +149,7 @@
     <ClInclude Include="messages\acceleration_message.hpp" />
     <ClInclude Include="messages\message.hpp" />
     <ClInclude Include="messages\move_message.hpp" />
+    <ClInclude Include="messages\rotation_message.hpp" />
     <ClInclude Include="system\graphics_system.hpp" />
     <ClInclude Include="system\input_system.hpp" />
     <ClInclude Include="system\message_system.hpp" />
