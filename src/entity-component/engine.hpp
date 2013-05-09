@@ -39,9 +39,6 @@ struct engine
   std::vector<movement_component*> Movement_Components;
   std::vector<sprite_component*> Sprite_Components;
   std::vector<gravity_component*> Gravity_Components;
-
-  // constructor declarations
-  engine(void);
 };
 
 }

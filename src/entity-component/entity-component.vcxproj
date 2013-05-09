@@ -119,7 +119,6 @@
       <FileType>CppCode</FileType>
     </ClInclude>
     <ClCompile Include="component\icomponent.cpp" />
-    <ClCompile Include="engine.cpp" />
     <ClCompile Include="entity\entity.cpp" />
     <ClCompile Include="entity\entity_factory.cpp" />
     <ClCompile Include="entity\entity_id.cpp" />
