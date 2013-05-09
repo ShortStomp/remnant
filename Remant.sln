@@ -12,7 +12,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tetris", "src\Tetris\Tetris
 		{3AF0345A-B08E-4E08-BFDD-C3B325506786} = {3AF0345A-B08E-4E08-BFDD-C3B325506786}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Remant", "src\Remnant\Remant.vcxproj", "{3AF0345A-B08E-4E08-BFDD-C3B325506786}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "entity-component", "src\Entity-Component\entity-component.vcxproj", "{3AF0345A-B08E-4E08-BFDD-C3B325506786}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
