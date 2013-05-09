@@ -10,9 +10,9 @@
 //
 //===----------------------------------------------------------------------===//
 void
-rem::gravity_system::apply_gravitational_forces(rem::engine &engine)
+ec::gravity_system::apply_gravitational_forces(ec::engine &engine)
 {
-  using namespace rem;
+  using namespace ec;
 
   for(const auto it : engine.Gravity_Components) {
 

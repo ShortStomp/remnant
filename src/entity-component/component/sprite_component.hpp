@@ -21,7 +21,7 @@
 // TODO: this header include should go away when we move the conrete sf::Texture out of this class.
 #include <SFML\Graphics\Texture.hpp>
 
-namespace rem
+namespace ec
 {
   struct sprite_component :
     public icomponent

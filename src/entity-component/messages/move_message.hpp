@@ -16,7 +16,7 @@
 #ifndef _MOVE_MESSAGE_HPP_
 #define _MOVE_MESSAGE_HPP_
 
-namespace rem
+namespace ec
 {
   struct move_message
   {

@@ -8,7 +8,7 @@
 // The engine constructor. Initializes the Window member structure.
 //
 //===----------------------------------------------------------------------===//
-rem::engine::engine(void)
+ec::engine::engine(void)
 {
   const std::string window_title("Remnant Title Text");
   const sf::VideoMode window_mode(1024, 768);

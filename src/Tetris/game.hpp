@@ -14,7 +14,7 @@
 //===----------------------------------------------------------------------===///
 #ifndef _GAME_HPP_
 #define _GAME_HPP_
-namespace rem
+namespace tet
 {
   //
   // forward declarations
@@ -22,7 +22,7 @@ namespace rem
 
 namespace game
 {
-  void game_loop(rem::engine &e);
+  void game_loop(ec::engine &e);
 }
   
 }

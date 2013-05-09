@@ -13,7 +13,7 @@
 //===----------------------------------------------------------------------===//
 template<typename T>
 T*
-rem::entity_helpers::get_component(rem::entity *const entity_ptr)
+ec::entity_helpers::get_component(ec::entity *const entity_ptr)
 {
    T *component_ptr = nullptr;
 
@@ -38,8 +38,8 @@ rem::entity_helpers::get_component(rem::entity *const entity_ptr)
 // Wrapper for getting the input_component from an entity.
 //
 //===----------------------------------------------------------------------===//
-inline rem::input_component*
-rem::entity_helpers::get_input_component(entity *const entity_ptr)
+inline ec::input_component*
+ec::entity_helpers::get_input_component(entity *const entity_ptr)
 {
   return get_component<input_component>(entity_ptr);
 }
@@ -51,8 +51,8 @@ rem::entity_helpers::get_input_component(entity *const entity_ptr)
 // Wrapper for getting the movement_component from an entity.
 //
 //===----------------------------------------------------------------------===//
-inline rem::movement_component*
-rem::entity_helpers::get_movement_component(entity *const entity_ptr)
+inline ec::movement_component*
+ec::entity_helpers::get_movement_component(entity *const entity_ptr)
 {
   return get_component<movement_component>(entity_ptr);
 }
@@ -63,8 +63,8 @@ rem::entity_helpers::get_movement_component(entity *const entity_ptr)
 // Wrapper for getting the sprite_component from an entity. 
 //
 //===----------------------------------------------------------------------===//
-inline rem::sprite_component*
-rem::entity_helpers::get_sprite_component(entity *const entity_ptr)
+inline ec::sprite_component*
+ec::entity_helpers::get_sprite_component(entity *const entity_ptr)
 {
   return get_component<sprite_component>(entity_ptr);
 }

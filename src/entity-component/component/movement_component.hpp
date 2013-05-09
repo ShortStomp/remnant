@@ -15,7 +15,7 @@
 #define _MOVEMENT_COMPONENT_HPP_
 #include <SFML\System\Vector2.hpp>
 #include "icomponent.hpp"
-namespace rem
+namespace ec
 {
   struct movement_component :
     public icomponent

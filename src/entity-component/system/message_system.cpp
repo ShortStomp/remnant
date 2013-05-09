@@ -18,9 +18,9 @@
 // Process a single message for an entity.
 //
 //===----------------------------------------------------------------------===//
-void process_message(const rem::message message, rem::entity *const entity_ptr)
+void process_message(const ec::message message, ec::entity *const entity_ptr)
 {
-  using namespace rem;
+  using namespace ec;
 
   if(message.Type == MESSAGE_TYPE_MOVE) {
     const auto move_ptr = entity_helpers::get_movement_component(entity_ptr);
@@ -47,9 +47,9 @@ void process_message(const rem::message message, rem::entity *const entity_ptr)
 // Process the message queue for a single entity.
 //
 //===----------------------------------------------------------------------===//
-void process_entity(rem::entity *const entity_ptr)
+void process_entity(ec::entity *const entity_ptr)
 {
-  using namespace rem;
+  using namespace ec;
 
   auto &queue = entity_ptr->Message_Queue; // alias for the message queue on the entity
 
@@ -70,7 +70,7 @@ void process_entity(rem::entity *const entity_ptr)
 // message queue.
 //
 //===----------------------------------------------------------------------===//
-void rem::message_system::process_messages(rem::engine &engine)
+void ec::message_system::process_messages(ec::engine &engine)
 {
   for(const auto it : engine.Entities) {
     process_entity(it);

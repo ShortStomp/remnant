@@ -17,7 +17,7 @@
 #define _ENTITY_FACTORY_HPP
 #include "entity.hpp"
 
-namespace rem
+namespace ec
 {
   class entity_factory
   {

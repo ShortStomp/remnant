@@ -14,7 +14,7 @@
 // system contains no state.
 //
 //===----------------------------------------------------------------------===///
-namespace rem
+namespace ec
 {
   //
   // forward declarations
@@ -22,6 +22,6 @@ namespace rem
 
 namespace graphics_system
 {
-  void update_screen(rem::engine &engine);
+  void update_screen(ec::engine &engine);
 }
 }

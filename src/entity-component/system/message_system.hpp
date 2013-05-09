@@ -17,14 +17,14 @@
 #ifndef _MESSAGE_SYSTEM_HPP_ 
 #define _MESSAGE_SYSTEM_HPP_
 
-namespace rem
+namespace ec
 {
   // forward declarations
   struct engine;
 
 namespace message_system
 {
-  void process_messages(rem::engine &engine);
+  void process_messages(ec::engine &engine);
 }
 }
 

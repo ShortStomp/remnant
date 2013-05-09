@@ -18,7 +18,7 @@
 #define _ROTATION_MESSAGE_HPP
 #include <SFML\System\Vector2.hpp>
 
-namespace rem
+namespace ec
 {
   struct rotation_message
   {

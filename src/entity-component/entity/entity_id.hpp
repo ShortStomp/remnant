@@ -18,7 +18,7 @@
 #ifndef _ENTITY_ID_HPP_
 #define _ENTITY_ID_HPP_
 
-namespace rem
+namespace ec
 {
   class entity_id
   {

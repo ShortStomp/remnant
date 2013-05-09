@@ -16,7 +16,7 @@
 #ifndef _GRAVITY_COMPONENT_HPP_
 #define _GRAVITY_COMPONENT_HPP_
 #include "icomponent.hpp"
-namespace rem
+namespace ec
 {
   struct gravity_component :
     public icomponent

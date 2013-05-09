@@ -18,7 +18,7 @@
 #include <SFML\System\Vector2.hpp>
 #include <SFML\Graphics\Transformable.hpp>
 
-namespace rem
+namespace ec
 {
   struct transform_component :
     public sf::Transformable

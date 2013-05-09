@@ -15,7 +15,7 @@
 #ifndef _COMPONENT_FACTORY_HPP_
 #define _COMPONENT_FACTORY_HPP_
 
-namespace rem
+namespace ec
 {
   template<typename T>
   struct component_factory

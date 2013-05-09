@@ -19,7 +19,7 @@
 #include "acceleration_message.hpp"
 #include "rotation_message.hpp"
 
-namespace rem
+namespace ec
 {
 
   // enum declarations

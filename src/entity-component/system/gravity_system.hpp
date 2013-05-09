@@ -15,7 +15,7 @@
 //===----------------------------------------------------------------------===///
 #ifndef _GRAVITY_SYSTEM_HPP_
 #define _GRAVITY_SYSTEM_HPP_
-namespace rem
+namespace ec
 {
   // forward declarations
   struct engine;

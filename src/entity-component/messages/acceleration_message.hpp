@@ -17,7 +17,7 @@
 #define _ACCELERATION_MESSAGE_HPP_
 #include <SFML\System\Vector2.hpp>
 
-namespace rem
+namespace ec
 {
   struct acceleration_message
   {

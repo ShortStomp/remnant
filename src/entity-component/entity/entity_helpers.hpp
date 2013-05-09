@@ -14,7 +14,7 @@
 //===----------------------------------------------------------------------===//
 #ifndef _ENTITY_HELPERS_HPP_
 #define _ENTITY_HELPERS_HPP_
-namespace rem
+namespace ec
 {
   // forward declarations
   class entity;

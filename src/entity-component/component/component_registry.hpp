@@ -10,7 +10,7 @@
 #ifndef _COMPONENT_REGISTRY_HPP_
 #define _COMPONENT_REGISTRY_HPP_
 
-namespace rem
+namespace ec
 {
   enum COMPONENT_REGISTRY_TYPE {
     COMPONENT_TYPE_INPUT = 0,

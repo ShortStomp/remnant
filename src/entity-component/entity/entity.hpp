@@ -22,7 +22,7 @@
 #include "..\component\transform_component.hpp"
 #include "entity_helpers.hpp"
 
-namespace rem
+namespace ec
 {
   // forward declarations
   struct icomponent;

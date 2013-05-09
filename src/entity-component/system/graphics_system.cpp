@@ -10,7 +10,7 @@
 //
 //===----------------------------------------------------------------------===//
 void
-rem::graphics_system::update_screen(rem::engine &engine)
+ec::graphics_system::update_screen(ec::engine &engine)
 {
   // clear the window with black color
   engine.Window.clear();

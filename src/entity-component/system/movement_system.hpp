@@ -18,7 +18,7 @@
 #define _MOVEMENT_SYSTEM_HPP_
 #include "../messages/move_message.hpp"
 
-namespace rem
+namespace ec
 {
   // forward declarations
   class entity;
@@ -28,7 +28,7 @@ namespace rem
 
 namespace movement_system
 {
-  void move_entities(rem::engine &engine);
+  void move_entities(ec::engine &engine);
 }
 }
 #endif

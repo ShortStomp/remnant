@@ -16,11 +16,11 @@
 //
 //===----------------------------------------------------------------------===///
 void
-rem::game::game_loop(
-  rem::engine &engine
+tet::game::game_loop(
+  ec::engine &engine
   )
 {
-  using namespace rem;
+  using namespace ec;
 
   sf::Clock clock_instance;
   bool finished = false;

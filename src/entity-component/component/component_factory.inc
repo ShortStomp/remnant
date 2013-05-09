@@ -10,7 +10,7 @@
 //===----------------------------------------------------------------------===//
 template<typename T>
 T*
-rem::component_factory<T>::get(void) const
+ec::component_factory<T>::get(void) const
 {
   // constuct a new component
   // forw now, we'll just use the heap. This should be super easy to switch out

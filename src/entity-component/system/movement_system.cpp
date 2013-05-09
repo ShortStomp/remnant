@@ -14,7 +14,7 @@
 //
 //===----------------------------------------------------------------------===//
 void
-upate_transform_from_movement(const float elapsed_time, rem::transform_component &transform, rem::movement_component &movement)
+upate_transform_from_movement(const float elapsed_time, ec::transform_component &transform, ec::movement_component &movement)
 {
   // calculate the vleocity from the standard
   // v = a*t + v0
@@ -32,7 +32,7 @@ upate_transform_from_movement(const float elapsed_time, rem::transform_component
 //
 //===----------------------------------------------------------------------===//
 void
-rem::movement_system::move_entities(engine &engine)
+ec::movement_system::move_entities(engine &engine)
 {
   for(const auto it : engine.Movement_Components) {
 

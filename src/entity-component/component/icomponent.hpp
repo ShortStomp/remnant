@@ -20,7 +20,7 @@
 #define _ICOMPONENT_HPP_
 #include "component_registry.hpp"
 
-namespace rem
+namespace ec
 {
   // forward declarations
   class entity;

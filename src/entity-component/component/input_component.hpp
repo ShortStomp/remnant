@@ -17,7 +17,7 @@
 #define _INPUT_COMPONENT_HPP_
 #include "icomponent.hpp"
 
-namespace rem
+namespace ec
 {
   //forward declaration
   struct message;

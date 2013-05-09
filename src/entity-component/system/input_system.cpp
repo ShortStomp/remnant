@@ -12,9 +12,9 @@
 // 
 //===----------------------------------------------------------------------===//
 void
-process_rotation_keys(rem::entity &entity)
+process_rotation_keys(ec::entity &entity)
 {
-  using namespace rem;
+  using namespace ec;
 
   const auto rotation_angle = 5.0f;
 
@@ -44,9 +44,9 @@ process_rotation_keys(rem::entity &entity)
 //
 //===----------------------------------------------------------------------===//
 void
-process_movement_keys(rem::entity &entity)
+process_movement_keys(ec::entity &entity)
 {
-  using namespace rem;
+  using namespace ec;
 
   const auto acceleration = sf::Vector2f(1.03f, 2.03f);
 
@@ -86,7 +86,7 @@ process_movement_keys(rem::entity &entity)
 //
 //===----------------------------------------------------------------------===//
 void
-on_key_press(rem::input_component *const input_component_ptr)
+on_key_press(ec::input_component *const input_component_ptr)
 {
   if(input_component_ptr == nullptr) { // error
     return;
@@ -111,7 +111,7 @@ on_key_press(rem::input_component *const input_component_ptr)
 //
 //===----------------------------------------------------------------------===//
 void
-rem::input_system::process_input(rem::engine &engine, bool &game_finished)
+ec::input_system::process_input(ec::engine &engine, bool &game_finished)
 {
   sf::Event event_buffer;
   while(engine.Window.pollEvent(event_buffer)) {

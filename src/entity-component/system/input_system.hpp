@@ -17,7 +17,7 @@
 #ifndef _INPUT_SYSTEM_HPP_
 #define _INPUT_SYSTEM_HPP_
 
-namespace rem
+namespace ec
 {
   //
   // forward declarations
@@ -25,7 +25,7 @@ namespace rem
 
 namespace input_system
 {
-  void process_input(rem::engine &engine, bool &game_finished);
+  void process_input(ec::engine &engine, bool &game_finished);
 }
 
 }

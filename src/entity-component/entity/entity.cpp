@@ -7,7 +7,7 @@
 // the id passed into the constructor.
 //
 //===----------------------------------------------------------------------===//
-rem::entity::entity(const rem::entity_id id)
+ec::entity::entity(const ec::entity_id id)
   : _id(id)
 {
 }
@@ -21,8 +21,8 @@ rem::entity::entity(const rem::entity_id id)
 //
 //===----------------------------------------------------------------------===//
 void
-rem::entity::add_component(
-  rem::icomponent *const component_ptr
+ec::entity::add_component(
+  ec::icomponent *const component_ptr
   )
 {
   if(component_ptr == nullptr) {
@@ -47,7 +47,7 @@ rem::entity::add_component(
 //
 //===----------------------------------------------------------------------===//
 void
-rem::entity::remove_component(
+ec::entity::remove_component(
   void
   )
 {

@@ -18,7 +18,7 @@
 #include <vector>
 #include <SFML\Graphics\RenderWindow.hpp>
 
-namespace rem
+namespace ec
 {
   // forward declarations
   class entity;

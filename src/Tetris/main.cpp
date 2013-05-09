@@ -9,9 +9,9 @@
 //===----------------------------------------------------------------------===///
 int main(int argc, char *argv[])
 {
-  rem::engine engine_instance;
+  ec::engine engine_instance;
 
-  rem::game::game_loop(engine_instance);
+  tet::game::game_loop(engine_instance);
 
   return 0;
 }
