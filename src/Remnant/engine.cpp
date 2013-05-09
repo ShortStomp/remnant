@@ -43,7 +43,9 @@ rem::engine::engine(void)
   component_factory<sprite_component> sprite_cfactory;
   
   auto spritecomponent_ptr = sprite_cfactory.get();
-  const auto load_result = spritecomponent_ptr->Texture.loadFromFile("../assets/grassd.gif");
+
+  
+  const auto load_result = spritecomponent_ptr->Texture.loadFromFile("../../assets/tetris-block.png");
   if(load_result == false) {
     // file failed to load
     __debugbreak();

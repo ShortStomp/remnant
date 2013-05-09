@@ -1,10 +1,10 @@
 #include <SFML\Window\Event.hpp>
-#include "engine.hpp"
-#include "system\message_system.hpp"
-#include "system\input_system.hpp"
-#include "system\movement_system.hpp"
-#include "system\graphics_system.hpp"
-#include "system\gravity_system.hpp"
+#include "..\Remnant\engine.hpp"
+#include "..\Remnant\system\message_system.hpp"
+#include "..\Remnant\system\input_system.hpp"
+#include "..\Remnant\system\movement_system.hpp"
+#include "..\Remnant\system\graphics_system.hpp"
+#include "..\Remnant\system\gravity_system.hpp"
 #include "game.hpp"
 
 

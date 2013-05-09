@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{3AF0345A-B08E-4E08-BFDD-C3B325506786}</ProjectGuid>
-    <RootNamespace>Remant</RootNamespace>
+    <ProjectGuid>{788D355B-EE19-4DBD-B18C-F9807F7E763A}</ProjectGuid>
+    <RootNamespace>Tetris</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -52,18 +52,20 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <Import Project="..\props\(linker)-sfml-binaries(debug).props" />
-    <Import Project="..\props\(compiler)-sfml-headers.props" />
-    <Import Project="..\props\(compiler)-output-directory.props" />
-  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
-    <Import Project="..\props\(linker)-sfml-binaries(debug).props" />
-    <Import Project="..\props\(compiler)-sfml-headers.props" />
-    <Import Project="..\props\(compiler)-output-directory.props" />
+    <Import Project="..\..\props\(compiler)-output-directory.props" />
+    <Import Project="..\..\props\(compiler)-sfml-headers.props" />
+    <Import Project="..\..\props\(linker)-sfml-binaries(debug).props" />
+    <Import Project="..\..\props\(linker)-ec-binaries.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="..\..\props\(compiler)-output-directory.props" />
+    <Import Project="..\..\props\(compiler)-sfml-headers.props" />
+    <Import Project="..\..\props\(linker)-sfml-binaries(debug).props" />
+    <Import Project="..\..\props\(linker)-ec-binaries.props" />
+  </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -115,50 +117,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="component\component_factory.inc">
-      <FileType>CppCode</FileType>
-    </ClInclude>
-    <ClCompile Include="component\icomponent.cpp" />
-    <ClCompile Include="engine.cpp" />
-    <ClCompile Include="entity\entity.cpp" />
-    <ClCompile Include="entity\entity_factory.cpp" />
-    <ClCompile Include="entity\entity_id.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="messages\message.cpp" />
-    <ClCompile Include="system\graphics_system.cpp" />
-    <ClCompile Include="system\gravity_system.cpp" />
-    <ClCompile Include="system\input_system.cpp" />
-    <ClCompile Include="system\message_system.cpp" />
-    <ClCompile Include="system\movement_system.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="component\component_factory.hpp" />
-    <ClInclude Include="component\component_registry.hpp" />
-    <ClInclude Include="component\gravity_component.hpp" />
-    <ClInclude Include="component\icomponent.hpp" />
-    <ClInclude Include="component\input_component.hpp" />
-    <ClInclude Include="component\movement_component.hpp" />
-    <ClInclude Include="component\sprite_component.hpp" />
-    <ClInclude Include="component\transform_component.hpp" />
-    <ClInclude Include="engine.hpp" />
-    <ClInclude Include="entity\entity.hpp" />
-    <ClInclude Include="entity\entity_factory.hpp" />
-    <ClInclude Include="entity\entity_helpers.hpp" />
-    <ClInclude Include="entity\entity_id.hpp" />
     <ClInclude Include="game.hpp" />
-    <ClInclude Include="messages\acceleration_message.hpp" />
-    <ClInclude Include="messages\message.hpp" />
-    <ClInclude Include="messages\move_message.hpp" />
-    <ClInclude Include="messages\rotation_message.hpp" />
-    <ClInclude Include="system\graphics_system.hpp" />
-    <ClInclude Include="system\gravity_system.hpp" />
-    <ClInclude Include="system\input_system.hpp" />
-    <ClInclude Include="system\message_system.hpp" />
-    <ClInclude Include="system\movement_system.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="entity\entity_helpers.inc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

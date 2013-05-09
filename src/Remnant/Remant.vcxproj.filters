@@ -15,8 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="game.cpp" />
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="system\graphics_system.cpp">
       <Filter>system</Filter>
@@ -51,7 +49,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.hpp" />
-    <ClInclude Include="game.hpp" />
     <ClInclude Include="system\graphics_system.hpp">
       <Filter>system</Filter>
     </ClInclude>

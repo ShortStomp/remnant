@@ -1,26 +1,48 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Remant", "src\Remant.vcxproj", "{3AF0345A-B08E-4E08-BFDD-C3B325506786}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EC526E18-7DB4-447B-BADA-E78E6482764E}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tetris", "src\Tetris\Tetris.vcxproj", "{788D355B-EE19-4DBD-B18C-F9807F7E763A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3AF0345A-B08E-4E08-BFDD-C3B325506786} = {3AF0345A-B08E-4E08-BFDD-C3B325506786}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Remant", "src\Remnant\Remant.vcxproj", "{3AF0345A-B08E-4E08-BFDD-C3B325506786}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Mixed Platforms = Debug|Mixed Platforms
 		Debug|Win32 = Debug|Win32
 		Debug|x64 = Debug|x64
+		Release|Mixed Platforms = Release|Mixed Platforms
 		Release|Win32 = Release|Win32
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3AF0345A-B08E-4E08-BFDD-C3B325506786}.Debug|Win32.ActiveCfg = Debug|x64
-		{3AF0345A-B08E-4E08-BFDD-C3B325506786}.Debug|Win32.Build.0 = Debug|x64
+		{788D355B-EE19-4DBD-B18C-F9807F7E763A}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{788D355B-EE19-4DBD-B18C-F9807F7E763A}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{788D355B-EE19-4DBD-B18C-F9807F7E763A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{788D355B-EE19-4DBD-B18C-F9807F7E763A}.Debug|Win32.Build.0 = Debug|Win32
+		{788D355B-EE19-4DBD-B18C-F9807F7E763A}.Debug|x64.ActiveCfg = Debug|x64
+		{788D355B-EE19-4DBD-B18C-F9807F7E763A}.Debug|x64.Build.0 = Debug|x64
+		{788D355B-EE19-4DBD-B18C-F9807F7E763A}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{788D355B-EE19-4DBD-B18C-F9807F7E763A}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{788D355B-EE19-4DBD-B18C-F9807F7E763A}.Release|Win32.ActiveCfg = Release|Win32
+		{788D355B-EE19-4DBD-B18C-F9807F7E763A}.Release|Win32.Build.0 = Release|Win32
+		{788D355B-EE19-4DBD-B18C-F9807F7E763A}.Release|x64.ActiveCfg = Release|Win32
+		{3AF0345A-B08E-4E08-BFDD-C3B325506786}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{3AF0345A-B08E-4E08-BFDD-C3B325506786}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{3AF0345A-B08E-4E08-BFDD-C3B325506786}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3AF0345A-B08E-4E08-BFDD-C3B325506786}.Debug|Win32.Build.0 = Debug|Win32
 		{3AF0345A-B08E-4E08-BFDD-C3B325506786}.Debug|x64.ActiveCfg = Debug|x64
 		{3AF0345A-B08E-4E08-BFDD-C3B325506786}.Debug|x64.Build.0 = Debug|x64
+		{3AF0345A-B08E-4E08-BFDD-C3B325506786}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{3AF0345A-B08E-4E08-BFDD-C3B325506786}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{3AF0345A-B08E-4E08-BFDD-C3B325506786}.Release|Win32.ActiveCfg = Release|Win32
 		{3AF0345A-B08E-4E08-BFDD-C3B325506786}.Release|Win32.Build.0 = Release|Win32
 		{3AF0345A-B08E-4E08-BFDD-C3B325506786}.Release|x64.ActiveCfg = Release|x64
