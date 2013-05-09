@@ -4,9 +4,38 @@
 #include "../component/movement_component.hpp"
 #include "../component/sprite_component.hpp"
 
+
 //===----------------------------------------------------------------------===//
 //
-// TODO: document
+// Searches the entity's components for the component of type T. Returns a pointer
+// to the component or a nullptr.
+//
+//===----------------------------------------------------------------------===//
+template<typename T>
+T*
+rem::entity_helpers::get_component(rem::entity *const entity_ptr)
+{
+   T *component_ptr = nullptr;
+
+   if(entity_ptr == nullptr) { // a null entity has no components
+     return component_ptr;
+   }
+
+  const auto find_predicate = [=](const icomponent *const component_ptr) { return component_ptr->Component_Type == T::COMPONENT_TYPE; };
+  const auto &components = entity_ptr->_components; // convenient alias
+
+  const auto it = std::find_if(components.cbegin(), components.cend(), find_predicate);
+
+  if(it != components.cend()) {
+    component_ptr = static_cast<T*>(*it); // we found the component
+  }
+  return component_ptr;
+}
+
+
+//===----------------------------------------------------------------------===//
+//
+// Wrapper for getting the input_component from an entity.
 //
 //===----------------------------------------------------------------------===//
 inline rem::input_component*
@@ -18,7 +47,8 @@ rem::entity_helpers::get_input_component(entity *const entity_ptr)
 
 //===----------------------------------------------------------------------===//
 //
-// TODO: document
+//
+// Wrapper for getting the movement_component from an entity.
 //
 //===----------------------------------------------------------------------===//
 inline rem::movement_component*
@@ -29,35 +59,12 @@ rem::entity_helpers::get_movement_component(entity *const entity_ptr)
 
 
 //===----------------------------------------------------------------------===//
-//
-// TODO: document
+// 
+// Wrapper for getting the sprite_component from an entity. 
 //
 //===----------------------------------------------------------------------===//
 inline rem::sprite_component*
 rem::entity_helpers::get_sprite_component(entity *const entity_ptr)
 {
   return get_component<sprite_component>(entity_ptr);
-}
-
-
-//===----------------------------------------------------------------------===//
-//
-// TODO: document
-//
-//===----------------------------------------------------------------------===//
-template<typename T>
-T*
-rem::entity_helpers::get_component(rem::entity *const entity_ptr)
-{
-   T *component_ptr = nullptr;
-
-  const auto find_predicate = [=](const icomponent *const component_ptr) { return component_ptr->Component_Type== T::COMPONENT_TYPE; };
-  const auto &components = entity_ptr->_components; // convenient alias
-
-  const auto it = std::find_if(components.cbegin(), components.cend(), find_predicate);
-
-  if(it != components.cend()) {
-    component_ptr = static_cast<T*>(*it); // we found the component
-  }
-  return component_ptr;
 }

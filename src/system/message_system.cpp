@@ -1,3 +1,5 @@
+#include <cstdio>
+#include <iostream>
 #include "../engine.hpp"
 #include "../entity/entity.hpp"
 #include "../messages/message.hpp"
@@ -10,6 +12,7 @@
 #include "../component/movement_component.hpp"
 
 #include "message_system.hpp"
+
 //===----------------------------------------------------------------------===//
 //
 // Process a single message for an entity.
@@ -22,9 +25,17 @@ void process_message(const rem::message message, rem::entity *const entity_ptr)
   if(message.Type == MESSAGE_TYPE_MOVE) {
     const auto move_ptr = entity_helpers::get_movement_component(entity_ptr);
     if(move_ptr != nullptr) {
-      movement_system::move_entity(*move_ptr, entity_ptr->Transform);
+      //movement_system::move_entity(*move_ptr, entity_ptr->Transform);
     }
   }
+  else if(message.Type == MESSAGE_TYPE_ACCELERATION) {
+    const auto move_ptr = entity_helpers::get_movement_component(entity_ptr);
+    if(move_ptr != nullptr) {
+      move_ptr->Acceleration.x += message.Accelerate_Message.X_Acceleration;
+      move_ptr->Acceleration.y += message.Accelerate_Message.Y_Acceleration;
+    }
+  }
+
 }
 
 

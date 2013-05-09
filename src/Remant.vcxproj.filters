@@ -106,6 +106,9 @@
     <ClInclude Include="component\component_registry.hpp">
       <Filter>component</Filter>
     </ClInclude>
+    <ClInclude Include="messages\acceleration_message.hpp">
+      <Filter>messages</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="entity\entity_helpers.inc">

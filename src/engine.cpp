@@ -33,9 +33,12 @@ rem::engine::engine(void)
   component_factory<movement_component> move_cfactory;
 
   auto move_component_ptr = move_cfactory.get();
-  move_component_ptr->Velocity.x = 2.2f;
-  move_component_ptr->Velocity.y = 1.1f;
+  move_component_ptr->Velocity.x = 0.2f;
+  move_component_ptr->Velocity.y = 0.1f;
+  move_component_ptr->Acceleration.x = 0.0f;
+  move_component_ptr->Acceleration.y = 0.0f;
   entity_instance->add_component(move_component_ptr);
+  Movement_Components.emplace_back(move_component_ptr);
  
   component_factory<sprite_component> sprite_cfactory;
   

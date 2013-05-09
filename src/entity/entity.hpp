@@ -51,9 +51,6 @@ namespace rem
 	  // methods
     void add_component(icomponent *const component_ptr);
     void remove_component(void); // TODO: determine how this should work.
-
-    template<typename T> T* get_component(void);
-
   };
 }
 #endif // _ENTITY_HPP_ definition

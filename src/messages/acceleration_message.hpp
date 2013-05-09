@@ -9,20 +9,21 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// A message containing an absolute position for an entity to move too.
+// Message containing a acceleration change data.
 //
 //===----------------------------------------------------------------------===///
 
-#ifndef _MOVE_MESSAGE_HPP_
-#define _MOVE_MESSAGE_HPP_
+#ifndef _ACCELERATION_MESSAGE_HPP_
+#define _ACCELERATION_MESSAGE_HPP_
+#include <SFML\System\Vector2.hpp>
 
 namespace rem
 {
-  struct move_message
+  struct acceleration_message
   {
     // members
-    float X_Distance;
-    float Y_Distance;
+    float X_Acceleration;
+    float Y_Acceleration;
   };
 }
-#endif // _MOVE_MESSAGE_HPP_
+#endif // _ACCELERATION_MESSAGE_HPP_

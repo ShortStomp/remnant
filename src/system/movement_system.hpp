@@ -22,12 +22,13 @@ namespace rem
 {
   // forward declarations
   class entity;
+  struct engine;
   struct transform_component;
   struct movement_component;
 
 namespace movement_system
 {
-  void move_entity(const movement_component &movement, transform_component &transform);
+  void move_entities(rem::engine &engine);
 }
 }
 #endif
