@@ -1,6 +1,7 @@
 #include "input_component.hpp"
 #include "sprite_component.hpp"
 #include "movement_component.hpp"
+#include "gravity_component.hpp"
 
 //===----------------------------------------------------------------------===//
 //

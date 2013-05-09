@@ -52,4 +52,11 @@ rem::engine::engine(void)
   spritecomponent_ptr->Sprite.setTexture(spritecomponent_ptr->Texture);
   entity_instance->add_component(spritecomponent_ptr);
   Sprite_Components.emplace_back(spritecomponent_ptr);
+
+  component_factory<gravity_component> gravity_cfactory;
+  auto gravity_component_ptr = gravity_cfactory.get();
+
+  entity_instance->add_component(gravity_component_ptr);
+  
+  Gravity_Components.emplace_back(gravity_component_ptr);
 }

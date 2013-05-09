@@ -4,6 +4,7 @@
 #include "system\input_system.hpp"
 #include "system\movement_system.hpp"
 #include "system\graphics_system.hpp"
+#include "system\gravity_system.hpp"
 #include "game.hpp"
 
 
@@ -32,6 +33,8 @@ rem::game::game_loop(
     message_system::process_messages(engine);
     
     input_system::process_input(engine, finished);
+
+    gravity_system::apply_gravitational_forces(engine);
 
     movement_system::move_entities(engine);
 

@@ -119,7 +119,6 @@
       <FileType>CppCode</FileType>
     </ClInclude>
     <ClCompile Include="component\icomponent.cpp" />
-    <ClCompile Include="component\movement_component.cpp" />
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="entity\entity.cpp" />
     <ClCompile Include="entity\entity_factory.cpp" />
@@ -128,6 +127,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="messages\message.cpp" />
     <ClCompile Include="system\graphics_system.cpp" />
+    <ClCompile Include="system\gravity_system.cpp" />
     <ClCompile Include="system\input_system.cpp" />
     <ClCompile Include="system\message_system.cpp" />
     <ClCompile Include="system\movement_system.cpp" />
@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClInclude Include="component\component_factory.hpp" />
     <ClInclude Include="component\component_registry.hpp" />
+    <ClInclude Include="component\gravity_component.hpp" />
     <ClInclude Include="component\icomponent.hpp" />
     <ClInclude Include="component\input_component.hpp" />
     <ClInclude Include="component\movement_component.hpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="messages\move_message.hpp" />
     <ClInclude Include="messages\rotation_message.hpp" />
     <ClInclude Include="system\graphics_system.hpp" />
+    <ClInclude Include="system\gravity_system.hpp" />
     <ClInclude Include="system\input_system.hpp" />
     <ClInclude Include="system\message_system.hpp" />
     <ClInclude Include="system\movement_system.hpp" />

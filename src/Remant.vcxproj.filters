@@ -45,8 +45,8 @@
     <ClCompile Include="system\movement_system.cpp">
       <Filter>system</Filter>
     </ClCompile>
-    <ClCompile Include="component\movement_component.cpp">
-      <Filter>component</Filter>
+    <ClCompile Include="system\gravity_system.cpp">
+      <Filter>system</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +111,12 @@
     </ClInclude>
     <ClInclude Include="messages\rotation_message.hpp">
       <Filter>messages</Filter>
+    </ClInclude>
+    <ClInclude Include="component\gravity_component.hpp">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="system\gravity_system.hpp">
+      <Filter>system</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

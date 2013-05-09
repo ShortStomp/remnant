@@ -9,26 +9,23 @@
 //
 //===----------------------------------------------------------------------===//
 //
-//
-//===----------------------------------------------------------------------===//
-#ifndef _MOVEMENT_COMPONENT_HPP_
-#define _MOVEMENT_COMPONENT_HPP_
-#include <SFML\System\Vector2.hpp>
+// This component can be added/removed from an entity to add gravitational behavior
+// to an object.
+// 
+//===----------------------------------------------------------------------===///
+#ifndef _GRAVITY_COMPONENT_HPP_
+#define _GRAVITY_COMPONENT_HPP_
 #include "icomponent.hpp"
 namespace rem
 {
-  struct movement_component :
+  struct gravity_component :
     public icomponent
   {
     // static members
-    static const auto COMPONENT_TYPE = COMPONENT_TYPE_MOVEMENT;
-
-    // members
-    sf::Vector2f Velocity;
-    sf::Vector2f Acceleration;
-
+    static const auto COMPONENT_TYPE = COMPONENT_TYPE_GRAVITY;
+    
     // constructors
-    movement_component(void) : icomponent(COMPONENT_TYPE) { }
+    gravity_component(void) : icomponent(COMPONENT_TYPE) { }
   };
 }
-#endif
+#endif // _GRAVITY_COMPONENT_HPP_
