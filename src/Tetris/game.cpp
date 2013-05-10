@@ -25,8 +25,6 @@ setup_test_code(ec::engine &engine)
   entity_instance->add_component(inputcomponent_ptr);
   engine.Entities.emplace_back(entity_instance);
 
-  engine.Input_Component.emplace_back(inputcomponent_ptr);
-
   component_factory<movement_component> move_cfactory;
 
   auto move_component_ptr = move_cfactory.get();
@@ -35,8 +33,7 @@ setup_test_code(ec::engine &engine)
   move_component_ptr->Acceleration.x = 0.0f;
   move_component_ptr->Acceleration.y = 0.0f;
   entity_instance->add_component(move_component_ptr);
-  engine.Movement_Components.emplace_back(move_component_ptr);
- 
+
   component_factory<sprite_component> sprite_cfactory;
   
   auto spritecomponent_ptr = sprite_cfactory.get();
@@ -50,14 +47,11 @@ setup_test_code(ec::engine &engine)
 
   spritecomponent_ptr->Sprite.setTexture(spritecomponent_ptr->Texture);
   entity_instance->add_component(spritecomponent_ptr);
-  engine.Sprite_Components.emplace_back(spritecomponent_ptr);
 
   component_factory<gravity_component> gravity_cfactory;
   auto gravity_component_ptr = gravity_cfactory.get();
 
   entity_instance->add_component(gravity_component_ptr);
-  
-  engine.Gravity_Components.emplace_back(gravity_component_ptr);
 }
 
 //===----------------------------------------------------------------------===//

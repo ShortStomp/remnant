@@ -34,14 +34,17 @@ upate_transform_from_movement(const float elapsed_time, ec::transform_component 
 void
 ec::movement_system::move_entities(engine &engine)
 {
-  for(const auto it : engine.Movement_Components) {
+  for(const auto entity_ptr : engine.Entities) {
 
-    if(it->Entity_Pointer == nullptr) { // error
+    if(entity_ptr == nullptr) { // error
       continue;
     }
 
-    auto &entity = *it->Entity_Pointer; // alias
-    auto &movement = *it;               // alias
-    upate_transform_from_movement(engine.Elapsed_Time, entity.Transform, movement);
+    const auto movement_ptr = entity_helpers::get_movement_component(entity_ptr);  // alias
+    if(movement_ptr == nullptr) { // no movement component on this entity
+      continue;
+    }
+    
+    upate_transform_from_movement(engine.Elapsed_Time, entity_ptr->Transform, *movement_ptr);
   }
 }

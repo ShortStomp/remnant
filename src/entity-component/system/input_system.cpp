@@ -116,11 +116,19 @@ ec::input_system::process_input(ec::engine &engine, bool &game_finished)
   sf::Event event_buffer;
   while(engine.Window.pollEvent(event_buffer)) {
 
-    std::for_each(engine.Input_Component.begin(), engine.Input_Component.end(), on_key_press);
+    for(const auto entity_ptr : engine.Entities) {
 
-    if(event_buffer.type == sf::Event::Closed) {
-      game_finished = true;
+      const auto input_component_ptr = entity_helpers::get_input_component(entity_ptr);
+      
+      if(input_component_ptr == nullptr) { // no input_component attached to entity
+        continue;
+      }
+
+      on_key_press(input_component_ptr);
+
+      if(event_buffer.type == sf::Event::Closed) {
+        game_finished = true;
+      }
     }
   }
-
 }

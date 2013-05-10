@@ -15,20 +15,13 @@ template<typename T>
 T*
 ec::entity_helpers::get_component(ec::entity *const entity_ptr)
 {
-   T *component_ptr = nullptr;
-
    if(entity_ptr == nullptr) { // a null entity has no components
-     return component_ptr;
+     return nullptr;
    }
 
-  const auto find_predicate = [=](const icomponent *const component_ptr) { return component_ptr->Component_Type == T::COMPONENT_TYPE; };
   const auto &components = entity_ptr->_components; // convenient alias
+  const auto component_ptr = static_cast<T*>(components.at(T::COMPONENT_TYPE));
 
-  const auto it = std::find_if(components.cbegin(), components.cend(), find_predicate);
-
-  if(it != components.cend()) {
-    component_ptr = static_cast<T*>(*it); // we found the component
-  }
   return component_ptr;
 }
 

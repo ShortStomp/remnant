@@ -14,17 +14,16 @@ ec::gravity_system::apply_gravitational_forces(ec::engine &engine)
 {
   using namespace ec;
 
-  for(const auto it : engine.Gravity_Components) {
+  for(const auto entity_ptr : engine.Entities) {
 
-    if(it->Entity_Pointer == nullptr) { // can't send the entity a message
+    if(entity_ptr == nullptr) { // can't send the entity a message
       continue;
     }
 
     message move_message(MESSAGE_TYPE_ACCELERATION);
     move_message.Accelerate_Message.Y_Acceleration = gravity_system::GRAVITATIONAL_CONSTANT;
 
-    auto &entity = *it->Entity_Pointer; // alias
-    entity.Message_Queue.push(move_message);
+    entity_ptr->Message_Queue.push(move_message);
   }
 
 }

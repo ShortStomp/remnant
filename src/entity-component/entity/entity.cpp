@@ -8,7 +8,8 @@
 //
 //===----------------------------------------------------------------------===//
 ec::entity::entity(const ec::entity_id id)
-  : _id(id)
+  : _id(id),
+  _components(COMPONENT_TYPE_MAX, nullptr)
 {
 }
 
@@ -31,11 +32,19 @@ ec::entity::add_component(
     return;
   }
 
+  // get a reference to the pointer inside _components where icomponent ptr should be
+  auto &component_ptr_inside_vector = _components.at(component_ptr->Component_Type);
+
+  if(component_ptr_inside_vector != nullptr) {
+    // component type already added to this entity, error.
+    __debugbreak();
+  }
+
   // set the components parent to the entity
   component_ptr->Entity_Pointer = this;
 
-  // add the ptr to this entity
-  _components.emplace_back(component_ptr);
+  // update the pointer inside _components
+  component_ptr_inside_vector = component_ptr;
 }
 
 

@@ -16,13 +16,14 @@ ec::graphics_system::update_screen(ec::engine &engine)
   engine.Window.clear();
 
   // draw everything here
-  for(const auto it : engine.Sprite_Components) {
-    const auto entity_ptr = it->Entity_Pointer; // alias
+  for(const auto entity_ptr : engine.Entities) {
+    const auto sprite_component_ptr = ec::entity_helpers::get_sprite_component(entity_ptr);
+    const auto transform_component = entity_ptr->Transform; // alias
 
-    it->Sprite.setPosition(entity_ptr->Transform.getPosition());
-    it->Sprite.setRotation(entity_ptr->Transform.getRotation());
-    it->Sprite.setScale(entity_ptr->Transform.getScale());
-    engine.Window.draw(it->Sprite);
+    sprite_component_ptr->Sprite.setPosition(transform_component.getPosition());
+    sprite_component_ptr->Sprite.setRotation(transform_component.getRotation());
+    sprite_component_ptr->Sprite.setScale(transform_component.getScale());
+    engine.Window.draw(sprite_component_ptr->Sprite);
   }
 
   // current frame ends here
