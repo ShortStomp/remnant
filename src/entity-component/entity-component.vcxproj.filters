@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="entity\entity.cpp">
+      <Filter>entity</Filter>
+    </ClCompile>
+    <ClCompile Include="entity\entity_factory.cpp">
+      <Filter>entity</Filter>
+    </ClCompile>
+    <ClCompile Include="entity\entity_id.cpp">
+      <Filter>entity</Filter>
+    </ClCompile>
+    <ClCompile Include="system\graphics_system.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="system\gravity_system.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="component\icomponent.cpp">
+      <Filter>component</Filter>
+    </ClCompile>
+    <ClCompile Include="messages\message.cpp">
+      <Filter>messages</Filter>
+    </ClCompile>
+    <ClCompile Include="system\message_system.cpp">
+      <Filter>messages</Filter>
+    </ClCompile>
+    <ClCompile Include="system\input_system.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="system\movement_system.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="engine.hpp" />
+    <ClInclude Include="messages\acceleration_message.hpp">
+      <Filter>messages</Filter>
+    </ClInclude>
+    <ClInclude Include="component\component_factory.hpp">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="component\component_factory.inc">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="component\component_registry.hpp">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="entity\entity.hpp">
+      <Filter>entity</Filter>
+    </ClInclude>
+    <ClInclude Include="entity\entity_factory.hpp">
+      <Filter>entity</Filter>
+    </ClInclude>
+    <ClInclude Include="entity\entity_helpers.hpp">
+      <Filter>entity</Filter>
+    </ClInclude>
+    <ClInclude Include="entity\entity_id.hpp">
+      <Filter>entity</Filter>
+    </ClInclude>
+    <ClInclude Include="system\graphics_system.hpp">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="component\gravity_component.hpp">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="system\gravity_system.hpp">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="component\icomponent.hpp">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="component\input_component.hpp">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="messages\message.hpp">
+      <Filter>messages</Filter>
+    </ClInclude>
+    <ClInclude Include="system\message_system.hpp">
+      <Filter>messages</Filter>
+    </ClInclude>
+    <ClInclude Include="messages\move_message.hpp">
+      <Filter>messages</Filter>
+    </ClInclude>
+    <ClInclude Include="system\input_system.hpp">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="component\movement_component.hpp">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="system\movement_system.hpp">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="messages\rotation_message.hpp">
+      <Filter>messages</Filter>
+    </ClInclude>
+    <ClInclude Include="component\sprite_component.hpp">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="component\transform_component.hpp">
+      <Filter>component</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="component">
+      <UniqueIdentifier>{3913445e-ff9b-4537-81f9-de91b1cb7f7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entity">
+      <UniqueIdentifier>{b3ec5996-5e38-4906-83e2-1b6db06da454}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="messages">
+      <UniqueIdentifier>{993f00dc-dcd3-422d-854c-2aaf4d74d1be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system">
+      <UniqueIdentifier>{64257e0e-2d88-4ac2-bd9e-6c45e2a9994f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="entity\entity_helpers.inc">
+      <Filter>entity</Filter>
+    </None>
+  </ItemGroup>
+</Project>
