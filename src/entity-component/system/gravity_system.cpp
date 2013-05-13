@@ -12,8 +12,6 @@
 void
 ec::gravity_system::apply_gravitational_forces(ec::engine &engine)
 {
-  using namespace ec;
-
   for(const auto entity_ptr : engine.Entities) {
 
     if(entity_ptr == nullptr) { // can't send the entity a message

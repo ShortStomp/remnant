@@ -31,6 +31,17 @@ ec::entity_helpers::get_component(ec::entity *const entity_ptr)
 // Wrapper for getting the input_component from an entity.
 //
 //===----------------------------------------------------------------------===//
+inline ec::transform_component*
+ec::entity_helpers::get_transform_component(entity *const entity_ptr)
+{
+  return get_component<transform_component>(entity_ptr);
+}
+
+//===----------------------------------------------------------------------===//
+//
+// Wrapper for getting the input_component from an entity.
+//
+//===----------------------------------------------------------------------===//
 inline ec::input_component*
 ec::entity_helpers::get_input_component(entity *const entity_ptr)
 {

@@ -19,11 +19,14 @@ setup_test_code(ec::engine &engine)
   entity_factory efactory;
   auto entity_instance = efactory.get();
 
+  component_factory<transform_component> transform_cfactory;
+  auto transform_component_ptr = transform_cfactory.get();
+  entity_instance->add_component(transform_component_ptr);
+
   component_factory<input_component> input_cfactory;
   
   auto inputcomponent_ptr = input_cfactory.get();
   entity_instance->add_component(inputcomponent_ptr);
-  engine.Entities.emplace_back(entity_instance);
 
   component_factory<movement_component> move_cfactory;
 
@@ -52,6 +55,9 @@ setup_test_code(ec::engine &engine)
   auto gravity_component_ptr = gravity_cfactory.get();
 
   entity_instance->add_component(gravity_component_ptr);
+
+  // add the entity to the  engine
+  engine.Entities.emplace_back(entity_instance);
 }
 
 //===----------------------------------------------------------------------===//
