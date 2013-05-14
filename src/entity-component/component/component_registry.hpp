@@ -18,6 +18,7 @@ namespace ec
     COMPONENT_TYPE_MOVEMENT,
     COMPONENT_TYPE_SPRITE,
     COMPONENT_TYPE_GRAVITY,
+    COMPONENT_TYPE_PARENT,
     COMPONENT_TYPE_MAX      // Ensure this is always the last member of the enum.
   };
 }

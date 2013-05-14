@@ -21,6 +21,7 @@ setup_test_code(ec::engine &engine)
 
   component_factory<transform_component> transform_cfactory;
   auto transform_component_ptr = transform_cfactory.get();
+  transform_component_ptr->setPosition(engine.Window.getSize().x / 2.0f, 0.0f);
   entity_instance->add_component(transform_component_ptr);
 
   component_factory<input_component> input_cfactory;
@@ -31,25 +32,24 @@ setup_test_code(ec::engine &engine)
   component_factory<movement_component> move_cfactory;
 
   auto move_component_ptr = move_cfactory.get();
-  move_component_ptr->Velocity.x = 0.2f;
-  move_component_ptr->Velocity.y = 0.1f;
+  //move_component_ptr->Velocity.x = 0.2f;
+  //move_component_ptr->Velocity.y = 0.1f;
   move_component_ptr->Acceleration.x = 0.0f;
   move_component_ptr->Acceleration.y = 0.0f;
   entity_instance->add_component(move_component_ptr);
 
-  component_factory<sprite_component> sprite_cfactory;
+  //component_factory<sprite_component> sprite_cfactory;
   
-  auto spritecomponent_ptr = sprite_cfactory.get();
+  //auto spritecomponent_ptr = sprite_cfactory.get();
 
-  
-  const auto load_result = spritecomponent_ptr->Texture.loadFromFile("../../assets/tetris-block.png");
-  if(load_result == false) {
+  //const auto load_result = spritecomponent_ptr->Texture.loadFromFile("../../assets/tetris-block.png");
+  //if(load_result == false) {
     // file failed to load
-    __debugbreak();
-  }
+   // __debugbreak();
+  //}
 
-  spritecomponent_ptr->Sprite.setTexture(spritecomponent_ptr->Texture);
-  entity_instance->add_component(spritecomponent_ptr);
+  //spritecomponent_ptr->Sprite.setTexture(spritecomponent_ptr->Texture);
+  //entity_instance->add_component(spritecomponent_ptr);
 
   component_factory<gravity_component> gravity_cfactory;
   auto gravity_component_ptr = gravity_cfactory.get();
@@ -59,6 +59,44 @@ setup_test_code(ec::engine &engine)
   // add the entity to the  engine
   engine.Entities.emplace_back(entity_instance);
 }
+
+
+void
+add_test_L_block_to_engine(ec::engine &engine, ec::entity *parent_entity_ptr, const sf::Vector2f &offset)
+{
+  using namespace ec;
+
+  const entity_factory ef;
+  const auto e0 = ef.get();
+
+  const component_factory<sprite_component> sprite_cfactory;
+  
+  auto spritecomponent_ptr = sprite_cfactory.get();
+
+
+  const auto load_result = spritecomponent_ptr->Texture.loadFromFile("../../assets/tetris-block.png");
+  if(load_result == false) {
+    // file failed to load
+    __debugbreak();
+  }
+
+  spritecomponent_ptr->Sprite.setTexture(spritecomponent_ptr->Texture);
+  e0->add_component(spritecomponent_ptr);
+  
+  // the two entities are sharing the transform component
+  const auto shared_transform_component_ptr = entity_helpers::get_transform_component(parent_entity_ptr);
+  e0->add_component(shared_transform_component_ptr);
+
+  const component_factory<parent_component> parent_cfactory;
+  const auto parent_component_ptr = parent_cfactory.get();
+
+  parent_component_ptr->Offset = offset;
+  parent_component_ptr->parent_entity_ptr = parent_entity_ptr;
+  e0->add_component(parent_component_ptr);
+  
+  engine.Entities.emplace_back(e0);
+}
+
 
 //===----------------------------------------------------------------------===//
 //
@@ -92,6 +130,12 @@ tet::game::game_loop(
 
   setup_window(engine);
   setup_test_code(engine);
+  
+  add_test_L_block_to_engine(engine, engine.Entities.back(), sf::Vector2f(-15.0f, 0.0f));
+  add_test_L_block_to_engine(engine, engine.Entities.back(), sf::Vector2f(-15.0f, 15.0f));
+  add_test_L_block_to_engine(engine, engine.Entities.back(), sf::Vector2f(-15.0f, 30.0f));
+  add_test_L_block_to_engine(engine, engine.Entities.back(), sf::Vector2f(0.0f, 30.0f));
+  add_test_L_block_to_engine(engine, engine.Entities.back(), sf::Vector2f(15.0f, 30.0f));
 
   sf::Clock clock_instance;
   bool finished = false;

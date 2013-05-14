@@ -22,6 +22,7 @@ namespace ec
   struct movement_component;
   struct sprite_component;
   struct transform_component;
+  struct parent_component;
 
 namespace entity_helpers
 {
@@ -30,6 +31,7 @@ namespace entity_helpers
   input_component*      get_input_component(entity *const entity_ptr);
   movement_component*   get_movement_component(entity *const entity_ptr);
   sprite_component*     get_sprite_component(entity *const entity_ptr);
+  parent_component*     get_parent_component(entity *const entity_ptr);
 
   // templated function declarations
   template<typename T>
