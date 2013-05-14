@@ -84,7 +84,10 @@ add_test_L_block_to_engine(ec::engine &engine, ec::entity *parent_entity_ptr, co
   e0->add_component(spritecomponent_ptr);
   
   // the two entities are sharing the transform component
-  const auto shared_transform_component_ptr = entity_helpers::get_transform_component(parent_entity_ptr);
+  //const auto shared_transform_component_ptr = entity_helpers::get_transform_component(parent_entity_ptr);
+  const component_factory<transform_component> transform_cfactory;
+  const auto shared_transform_component_ptr = transform_cfactory.get();
+  shared_transform_component_ptr->move(offset);
   e0->add_component(shared_transform_component_ptr);
 
   const component_factory<parent_component> parent_cfactory;
@@ -131,11 +134,11 @@ tet::game::game_loop(
   setup_window(engine);
   setup_test_code(engine);
   
-  add_test_L_block_to_engine(engine, engine.Entities.back(), sf::Vector2f(-15.0f, 0.0f));
-  add_test_L_block_to_engine(engine, engine.Entities.back(), sf::Vector2f(-15.0f, 15.0f));
-  add_test_L_block_to_engine(engine, engine.Entities.back(), sf::Vector2f(-15.0f, 30.0f));
-  add_test_L_block_to_engine(engine, engine.Entities.back(), sf::Vector2f(0.0f, 30.0f));
-  add_test_L_block_to_engine(engine, engine.Entities.back(), sf::Vector2f(15.0f, 30.0f));
+  add_test_L_block_to_engine(engine, engine.Entities.front(), sf::Vector2f(-15.0f, 0.0f));
+  add_test_L_block_to_engine(engine, engine.Entities.front(), sf::Vector2f(-15.0f, 15.0f));
+  add_test_L_block_to_engine(engine, engine.Entities.front(), sf::Vector2f(-15.0f, 30.0f));
+  add_test_L_block_to_engine(engine, engine.Entities.front(), sf::Vector2f(0.0f, 30.0f));
+  add_test_L_block_to_engine(engine, engine.Entities.front(), sf::Vector2f(15.0f, 30.0f));
 
   sf::Clock clock_instance;
   bool finished = false;
