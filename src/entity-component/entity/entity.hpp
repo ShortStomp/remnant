@@ -46,11 +46,10 @@ namespace ec
 	
     // members
 	  std::queue<message> Message_Queue;
-    transform_component Transform;
     
 	  // methods
     void add_component(icomponent *const component_ptr);
-    void remove_component(void); // TODO: determine how this should work.
+    void remove_component(const int component_type); // TODO: determine how this should work.
   };
 }
 #endif // _ENTITY_HPP_ definition

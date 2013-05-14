@@ -17,12 +17,25 @@ ec::graphics_system::update_screen(ec::engine &engine)
 
   // draw everything here
   for(const auto entity_ptr : engine.Entities) {
-    const auto sprite_component_ptr = ec::entity_helpers::get_sprite_component(entity_ptr);
-    const auto transform_component = entity_ptr->Transform; // alias
+    const auto sprite_component_ptr = entity_helpers::get_sprite_component(entity_ptr);       // alias
+    const auto transform_component_ptr = entity_helpers::get_transform_component(entity_ptr); // alias
 
-    sprite_component_ptr->Sprite.setPosition(transform_component.getPosition());
-    sprite_component_ptr->Sprite.setRotation(transform_component.getRotation());
-    sprite_component_ptr->Sprite.setScale(transform_component.getScale());
+    if(sprite_component_ptr == nullptr) { // nothing to draw
+      continue;
+    }
+
+    if(transform_component_ptr == nullptr) {
+      __debugbreak();
+    }
+
+    sprite_component_ptr->Sprite.setPosition(transform_component_ptr->getPosition());
+    sprite_component_ptr->Sprite.setRotation(transform_component_ptr->getRotation());
+    sprite_component_ptr->Sprite.setScale(transform_component_ptr->getScale());
+
+    const auto parent_component_ptr = entity_helpers::get_parent_component(entity_ptr);
+    if(parent_component_ptr != nullptr) {
+      sprite_component_ptr->Sprite.move(parent_component_ptr->Offset);
+    }
     engine.Window.draw(sprite_component_ptr->Sprite);
   }
 

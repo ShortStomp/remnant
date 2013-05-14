@@ -44,7 +44,12 @@ ec::movement_system::move_entities(engine &engine)
     if(movement_ptr == nullptr) { // no movement component on this entity
       continue;
     }
+
+    const auto transform_ptr = entity_helpers::get_transform_component(entity_ptr); // alias
+    if(transform_ptr == nullptr) { // no transform component on this entity
+      continue;
+    }
     
-    upate_transform_from_movement(engine.Elapsed_Time, entity_ptr->Transform, *movement_ptr);
+    upate_transform_from_movement(engine.Elapsed_Time, *transform_ptr, *movement_ptr);
   }
 }

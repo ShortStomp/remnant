@@ -16,7 +16,7 @@ process_rotation_keys(ec::entity &entity)
 {
   using namespace ec;
 
-  const auto rotation_angle = 5.0f;
+  const auto rotation_angle = 1.0f;
 
   message rotation_message(MESSAGE_TYPE_ROTATION);
 
@@ -123,7 +123,6 @@ ec::input_system::process_input(ec::engine &engine, bool &game_finished)
   for(const auto entity_ptr : engine.Entities) {
 
     const auto input_component_ptr = entity_helpers::get_input_component(entity_ptr);
-      
     if(input_component_ptr == nullptr) { // no input_component attached to entity
       continue;
     }

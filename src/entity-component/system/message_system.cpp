@@ -36,7 +36,11 @@ void process_message(const ec::message message, ec::entity *const entity_ptr)
     }
   }
   else if(message.Type == MESSAGE_TYPE_ROTATION) {
-    entity_ptr->Transform.rotate(message.Rotation_Message.Angle);
+    const auto transform_ptr = entity_helpers::get_transform_component(entity_ptr);
+    if(transform_ptr == nullptr) { // no transform component to update
+      return;
+    }
+    transform_ptr->rotate(message.Rotation_Message.Angle);
   }
 
 }

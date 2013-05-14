@@ -57,7 +57,7 @@ ec::entity::add_component(
 //===----------------------------------------------------------------------===//
 void
 ec::entity::remove_component(
-  void
+  const int component_type
   )
 {
 }
