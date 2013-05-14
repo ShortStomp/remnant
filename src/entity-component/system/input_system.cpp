@@ -16,7 +16,7 @@ process_rotation_keys(ec::entity &entity)
 {
   using namespace ec;
 
-  const auto rotation_angle = 1.0f;
+  const auto rotation_angle = 15.0f;
 
   message rotation_message(MESSAGE_TYPE_ROTATION);
 
