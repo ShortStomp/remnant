@@ -87,7 +87,37 @@ add_test_L_block_to_engine(ec::engine &engine, ec::entity *parent_entity_ptr, co
   engine.Entities.emplace_back(e0);
 }
 
+void
+add_border_to_engine(ec::engine &engine)
+{
+  using namespace ec;
 
+  const entity_factory ef;
+  const auto e0 = ef.get();
+
+  const component_factory<sprite_component> sprite_cfactory;
+
+  auto spritecomponent_ptr = sprite_cfactory.get();
+
+  const auto load_result = spritecomponent_ptr->Texture.loadFromFile("../../assets/border.png");
+  if(load_result == false) {
+    __debugbreak();
+  }
+  
+  spritecomponent_ptr->Sprite.setTexture(spritecomponent_ptr->Texture);
+  spritecomponent_ptr->Sprite.setOrigin(-1 * ((engine.Window.getSize().x - 400.0f) / 2), -1 * ((engine.Window.getSize().y - 600.0f) / 2));
+  e0->add_component(spritecomponent_ptr);
+  
+   // the two entities are sharing the transform component
+  //const auto shared_transform_component_ptr = entity_helpers::get_transform_component(parent_entity_ptr);
+
+  component_factory<transform_component> transform_cfactory;
+  auto transform_component_ptr = transform_cfactory.get();
+  
+  e0->add_component(transform_component_ptr);
+
+  engine.Entities.emplace_back(e0);
+}
 //===----------------------------------------------------------------------===//
 //
 // Game-specific window initialization code.
@@ -126,6 +156,8 @@ tet::game::game_loop(
   add_test_L_block_to_engine(engine, engine.Entities.front(), sf::Vector2f(-15.0f, 15.0f));
   add_test_L_block_to_engine(engine, engine.Entities.front(), sf::Vector2f(0.0f, 15.0f));
   add_test_L_block_to_engine(engine, engine.Entities.front(), sf::Vector2f(15.0f, 15.0f));
+
+  add_border_to_engine(engine);
 
   sf::Clock clock_instance;
   bool finished = false;
