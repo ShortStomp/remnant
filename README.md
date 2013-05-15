@@ -1,3 +1,8 @@
+```c++
+const int test = 32;
+// syntax high-lighting inside read-me :)
+```
+
 remnant
 =======
 

@@ -21,7 +21,7 @@ setup_test_code(ec::engine &engine)
 
   component_factory<transform_component> transform_cfactory;
   auto transform_component_ptr = transform_cfactory.get();
-  transform_component_ptr->setPosition(engine.Window.getSize().x / 2.0f, 0.0f);
+  transform_component_ptr->setPosition(engine.Window.getSize().x / 2.0f, engine.Window.getSize().y / 2.0f);
   entity_instance->add_component(transform_component_ptr);
 
   component_factory<input_component> input_cfactory;
@@ -37,19 +37,6 @@ setup_test_code(ec::engine &engine)
   move_component_ptr->Acceleration.x = 0.0f;
   move_component_ptr->Acceleration.y = 0.0f;
   entity_instance->add_component(move_component_ptr);
-
-  //component_factory<sprite_component> sprite_cfactory;
-  
-  //auto spritecomponent_ptr = sprite_cfactory.get();
-
-  //const auto load_result = spritecomponent_ptr->Texture.loadFromFile("../../assets/tetris-block.png");
-  //if(load_result == false) {
-    // file failed to load
-   // __debugbreak();
-  //}
-
-  //spritecomponent_ptr->Sprite.setTexture(spritecomponent_ptr->Texture);
-  //entity_instance->add_component(spritecomponent_ptr);
 
   component_factory<gravity_component> gravity_cfactory;
   auto gravity_component_ptr = gravity_cfactory.get();
@@ -84,7 +71,10 @@ add_test_L_block_to_engine(ec::engine &engine, ec::entity *parent_entity_ptr, co
   e0->add_component(spritecomponent_ptr);
   
   // the two entities are sharing the transform component
-  const auto shared_transform_component_ptr = entity_helpers::get_transform_component(parent_entity_ptr);
+  //const auto shared_transform_component_ptr = entity_helpers::get_transform_component(parent_entity_ptr);
+  const component_factory<transform_component> transform_cfactory;
+  const auto shared_transform_component_ptr = transform_cfactory.get();
+  shared_transform_component_ptr->move(offset);
   e0->add_component(shared_transform_component_ptr);
 
   const component_factory<parent_component> parent_cfactory;
@@ -131,11 +121,11 @@ tet::game::game_loop(
   setup_window(engine);
   setup_test_code(engine);
   
-  add_test_L_block_to_engine(engine, engine.Entities.back(), sf::Vector2f(-15.0f, 0.0f));
-  add_test_L_block_to_engine(engine, engine.Entities.back(), sf::Vector2f(-15.0f, 15.0f));
-  add_test_L_block_to_engine(engine, engine.Entities.back(), sf::Vector2f(-15.0f, 30.0f));
-  add_test_L_block_to_engine(engine, engine.Entities.back(), sf::Vector2f(0.0f, 30.0f));
-  add_test_L_block_to_engine(engine, engine.Entities.back(), sf::Vector2f(15.0f, 30.0f));
+  add_test_L_block_to_engine(engine, engine.Entities.front(), sf::Vector2f(-15.0f, -15.0f));
+  add_test_L_block_to_engine(engine, engine.Entities.front(), sf::Vector2f(-15.0f, 0.0f));
+  add_test_L_block_to_engine(engine, engine.Entities.front(), sf::Vector2f(-15.0f, 15.0f));
+  add_test_L_block_to_engine(engine, engine.Entities.front(), sf::Vector2f(0.0f, 15.0f));
+  add_test_L_block_to_engine(engine, engine.Entities.front(), sf::Vector2f(15.0f, 15.0f));
 
   sf::Clock clock_instance;
   bool finished = false;
@@ -149,7 +139,7 @@ tet::game::game_loop(
     
     input_system::process_input(engine, finished);
 
-    gravity_system::apply_gravitational_forces(engine);
+    //gravity_system::apply_gravitational_forces(engine);
 
     movement_system::move_entities(engine);
 
