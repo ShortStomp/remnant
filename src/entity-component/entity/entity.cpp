@@ -9,6 +9,7 @@
 //===----------------------------------------------------------------------===//
 ec::entity::entity(const ec::entity_id id)
   : _id(id),
+  Parent(nullptr),
   _components(COMPONENT_TYPE_MAX, nullptr)
 {
 }

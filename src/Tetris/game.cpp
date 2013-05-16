@@ -55,12 +55,11 @@ add_test_L_block_to_engine(ec::engine &engine, ec::entity *parent_entity_ptr, co
 
   const entity_factory ef;
   const auto e0 = ef.get();
+  e0->Parent = parent_entity_ptr;
 
   const component_factory<sprite_component> sprite_cfactory;
   
   auto spritecomponent_ptr = sprite_cfactory.get();
-
-
   const auto load_result = spritecomponent_ptr->Texture.loadFromFile("../../assets/tetris-block.png");
   if(load_result == false) {
     // file failed to load
@@ -76,13 +75,6 @@ add_test_L_block_to_engine(ec::engine &engine, ec::entity *parent_entity_ptr, co
   const auto shared_transform_component_ptr = transform_cfactory.get();
   shared_transform_component_ptr->move(offset);
   e0->add_component(shared_transform_component_ptr);
-
-  const component_factory<parent_component> parent_cfactory;
-  const auto parent_component_ptr = parent_cfactory.get();
-
-  parent_component_ptr->Offset = offset;
-  parent_component_ptr->parent_entity_ptr = parent_entity_ptr;
-  e0->add_component(parent_component_ptr);
   
   engine.Entities.emplace_back(e0);
 }
@@ -121,11 +113,12 @@ tet::game::game_loop(
   setup_window(engine);
   setup_test_code(engine);
   
-  add_test_L_block_to_engine(engine, engine.Entities.front(), sf::Vector2f(-15.0f, -15.0f));
-  add_test_L_block_to_engine(engine, engine.Entities.front(), sf::Vector2f(-15.0f, 0.0f));
-  add_test_L_block_to_engine(engine, engine.Entities.front(), sf::Vector2f(-15.0f, 15.0f));
-  add_test_L_block_to_engine(engine, engine.Entities.front(), sf::Vector2f(0.0f, 15.0f));
-  add_test_L_block_to_engine(engine, engine.Entities.front(), sf::Vector2f(15.0f, 15.0f));
+  const auto parent_entity = engine.Entities.front();
+  add_test_L_block_to_engine(engine, parent_entity, sf::Vector2f(-15.0f, -15.0f));
+  add_test_L_block_to_engine(engine, parent_entity, sf::Vector2f(-15.0f, 0.0f));
+  add_test_L_block_to_engine(engine, parent_entity, sf::Vector2f(-15.0f, 15.0f));
+  add_test_L_block_to_engine(engine, parent_entity, sf::Vector2f(0.0f, 15.0f));
+  add_test_L_block_to_engine(engine, parent_entity, sf::Vector2f(15.0f, 15.0f));
 
   sf::Clock clock_instance;
   bool finished = false;

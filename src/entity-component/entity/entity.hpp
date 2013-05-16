@@ -45,11 +45,12 @@ namespace ec
   public:
 	
     // members
+    entity              *Parent;
 	  std::queue<message> Message_Queue;
     
 	  // methods
     void add_component(icomponent *const component_ptr);
-    void remove_component(const int component_type); // TODO: determine how this should work.
+    void remove_component(const int component_type);
   };
 }
 #endif // _ENTITY_HPP_ definition
