@@ -69,12 +69,10 @@ add_test_L_block_to_engine(ec::engine &engine, ec::entity *parent_entity_ptr, co
   spritecomponent_ptr->Sprite.setTexture(spritecomponent_ptr->Texture);
   e0->add_component(spritecomponent_ptr);
   
-  // the two entities are sharing the transform component
-  //const auto shared_transform_component_ptr = entity_helpers::get_transform_component(parent_entity_ptr);
   const component_factory<transform_component> transform_cfactory;
-  const auto shared_transform_component_ptr = transform_cfactory.get();
-  shared_transform_component_ptr->move(offset);
-  e0->add_component(shared_transform_component_ptr);
+  const auto transform_component_ptr = transform_cfactory.get();
+  transform_component_ptr->move(offset);
+  e0->add_component(transform_component_ptr);
   
   engine.Entities.emplace_back(e0);
 }
