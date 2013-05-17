@@ -77,6 +77,11 @@ add_test_L_block_to_engine(ec::engine &engine, ec::entity *parent_entity_ptr, co
   shared_transform_component_ptr->move(offset);
   e0->add_component(shared_transform_component_ptr);
 
+  const component_factory<movement_component> movement_cfactory;
+  const auto movement_component_ptr = movement_cfactory.get();
+  movement_component_ptr->Velocity.y = 0.1f;
+  e0->add_component(movement_component_ptr);
+
   const component_factory<parent_component> parent_cfactory;
   const auto parent_component_ptr = parent_cfactory.get();
 

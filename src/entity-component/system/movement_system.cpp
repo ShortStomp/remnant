@@ -6,6 +6,7 @@
 #include "../component/movement_component.hpp"
 #include "../entity/entity.hpp"
 #include "movement_system.hpp"
+#include "collision_system.hpp"
 
 //===----------------------------------------------------------------------===//
 //
@@ -34,6 +35,8 @@ upate_transform_from_movement(const float elapsed_time, ec::transform_component 
 void
 ec::movement_system::move_entities(engine &engine)
 {
+  using namespace collision_system;
+
   for(const auto entity_ptr : engine.Entities) {
 
     if(entity_ptr == nullptr) { // error
@@ -44,12 +47,14 @@ ec::movement_system::move_entities(engine &engine)
     if(movement_ptr == nullptr) { // no movement component on this entity
       continue;
     }
-
+    
     const auto transform_ptr = entity_helpers::get_transform_component(entity_ptr); // alias
     if(transform_ptr == nullptr) { // no transform component on this entity
       continue;
-    }
+    } 
     
-    upate_transform_from_movement(engine.Elapsed_Time, *transform_ptr, *movement_ptr);
+    if(collision_detection(engine, entity_ptr) == false) {
+      upate_transform_from_movement(engine.Elapsed_Time, *transform_ptr, *movement_ptr);
+    }
   }
 }

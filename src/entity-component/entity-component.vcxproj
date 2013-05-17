@@ -115,14 +115,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="component\collision_component.hpp" />
     <ClInclude Include="component\component_factory.inc">
       <FileType>CppCode</FileType>
     </ClInclude>
+    <ClCompile Include="component\collision_component.cpp" />
     <ClCompile Include="component\icomponent.cpp" />
     <ClCompile Include="entity\entity.cpp" />
     <ClCompile Include="entity\entity_factory.cpp" />
     <ClCompile Include="entity\entity_id.cpp" />
     <ClCompile Include="messages\message.cpp" />
+    <ClCompile Include="system\collision_system.cpp" />
     <ClCompile Include="system\graphics_system.cpp" />
     <ClCompile Include="system\gravity_system.cpp" />
     <ClCompile Include="system\input_system.cpp" />
@@ -148,6 +151,7 @@
     <ClInclude Include="messages\message.hpp" />
     <ClInclude Include="messages\move_message.hpp" />
     <ClInclude Include="messages\rotation_message.hpp" />
+    <ClInclude Include="system\collision_system.hpp" />
     <ClInclude Include="system\graphics_system.hpp" />
     <ClInclude Include="system\gravity_system.hpp" />
     <ClInclude Include="system\input_system.hpp" />
