@@ -100,9 +100,6 @@
     <ClInclude Include="component\transform_component.hpp">
       <Filter>component</Filter>
     </ClInclude>
-    <ClInclude Include="component\parent_component.hpp">
-      <Filter>component</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="component">
