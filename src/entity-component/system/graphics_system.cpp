@@ -1,40 +1,36 @@
 #include "..\engine.hpp"
 #include "..\component\sprite_component.hpp"
 #include "..\entity\entity.hpp"
+//#include <boost\log\trivial.hpp>
 #include "graphics_system.hpp"
 
+
 //===----------------------------------------------------------------------===//
 //
-// TODO: comment
+// If the entity_ptr has a parent_component
 //
 //===----------------------------------------------------------------------===//
-void
-draw_scenegraphs(
-  sf::RenderWindow &window,
-  const ec::transform_component &transform_component,
-  const ec::sprite_component    &sprite_component,
-  const ec::parent_component    &parent_component
-  )
+sf::Transform
+scenegraph_transform(const ec::transform_component &transform, ec::entity *const parent_ptr)
 {
   using namespace ec;
+  sf::Transform result = transform.getTransform();
 
-  const auto parent_entity_ptr = parent_component.parent_entity_ptr; // alias
-
-  if(parent_entity_ptr == parent_component.Entity_Pointer) {
-    __debugbreak();
-  }
-  
-  const auto parent_transform_ptr = entity_helpers::get_transform_component(parent_entity_ptr);
-  if(parent_transform_ptr == nullptr) {
-    __debugbreak();
+  if(parent_ptr == nullptr) { // entity is not a member of a scenegraph
+    return result;
   }
 
+  const auto parent_transform_component = entity_helpers::get_transform_component(parent_ptr);
+  if(parent_transform_component == nullptr) { // parent component is not a member of a scenegraph
+    //BOOST_LOG_TRIVIAL(warning) << "TODO: figure out if this should be a bug, or not." << std::endl;
+    return result;
+  }
 
-  // combine the parent transform with the transform component 
-  const auto combined_transform = parent_transform_ptr->getTransform() * transform_component.getTransform();
-    
-  window.draw(sprite_component.Sprite, combined_transform);
+  // combine the parent transform with the transform component
+  result = parent_transform_component->getTransform() * transform.getTransform();
+  return result;
 }
+
 
 //===----------------------------------------------------------------------===//
 //
@@ -50,6 +46,12 @@ ec::graphics_system::update_screen(ec::engine &engine)
 
   // draw everything here
   for(const auto entity_ptr : engine.Entities) {
+
+    if(entity_ptr == nullptr) { // error
+      //BOOST_TRIVIAL_LOG(error) << "Error nullptr entity* in engine.Entities collection." << std::endl;
+      __debugbreak();
+    }
+
     const auto sprite_component_ptr = entity_helpers::get_sprite_component(entity_ptr);       // alias
     const auto transform_component_ptr = entity_helpers::get_transform_component(entity_ptr); // alias
 
@@ -58,21 +60,18 @@ ec::graphics_system::update_screen(ec::engine &engine)
     }
 
     if(transform_component_ptr == nullptr) {
+      //BOOST_LOG_TRIVIAL(error) << "Entity with sprite component, missing transform component." << std::endl;
       __debugbreak();
     }
 
-    const auto parent_component_ptr = entity_helpers::get_parent_component(entity_ptr); // alias
+    // if entity_ptr is a member of a scenegraph, then multiply our transform with the parent's transform.
+    const sf::Transform transform = scenegraph_transform(*transform_component_ptr, entity_ptr->Parent);
 
-    if(parent_component_ptr != nullptr) { // drawing a scenegraph
-      draw_scenegraphs(engine.Window, *transform_component_ptr, *sprite_component_ptr, *parent_component_ptr);
-      continue;
-    }
+    //sprite_component_ptr->Sprite.setPosition(transform_component_ptr->getPosition());
+    //sprite_component_ptr->Sprite.setRotation(transform_component_ptr->getRotation());
+    //sprite_component_ptr->Sprite.setScale(transform_component_ptr->getScale());
 
-    sprite_component_ptr->Sprite.setPosition(transform_component_ptr->getPosition());
-    sprite_component_ptr->Sprite.setRotation(transform_component_ptr->getRotation());
-    sprite_component_ptr->Sprite.setScale(transform_component_ptr->getScale());
-
-    engine.Window.draw(sprite_component_ptr->Sprite);
+    engine.Window.draw(sprite_component_ptr->Sprite, transform);
   }
 
   // current frame ends here

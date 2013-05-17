@@ -103,12 +103,15 @@
     <ClInclude Include="component\transform_component.hpp">
       <Filter>component</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="component\parent_component.hpp">
       <Filter>component</Filter>
     </ClInclude>
     <ClInclude Include="system\collision_system.hpp">
       <Filter>system</Filter>
     </ClInclude>
+=======
+>>>>>>> fetch_head
   </ItemGroup>
   <ItemGroup>
     <Filter Include="component">
