@@ -32,7 +32,9 @@ void process_message(const ec::message message, ec::entity *const entity_ptr)
     const auto move_ptr = entity_helpers::get_movement_component(entity_ptr);
     if(move_ptr != nullptr) {
       move_ptr->Acceleration.x += message.Accelerate_Message.X_Acceleration;
+     // move_ptr->Acceleration.x = move_ptr->Acceleration.x > 0.0f ? 5.0f : move_ptr->Acceleration.x < 0.0f ? -5.0f : move_ptr->Acceleration.x;
       move_ptr->Acceleration.y += message.Accelerate_Message.Y_Acceleration;
+//      move_ptr->Acceleration.y = move_ptr->Acceleration.y > 0.0f ? 5.0f : move_ptr->Acceleration.y < 0.0f ? -5.0f : move_ptr->Acceleration.y;
     }
   }
   else if(message.Type == MESSAGE_TYPE_ROTATION) {

@@ -15,12 +15,14 @@
 //===----------------------------------------------------------------------===///
 #ifndef _COLLISION_SYSTEM_HPP_
 #define _COLLISION_SYSTEM_HPP_
-
+#include <SFML\System\Vector2.hpp>
+#include "..\component\collision_component.hpp"
 namespace ec
 {
 namespace collision_system
 {
-  bool collision_detection(engine &engine, entity *const moving_entity_ptr);
+  void update_bounding_boxes(ec::engine &engine);
+  void is_colliding(ec::entity &moving_entity, ec::movement_component &movement_moving_parent_ptr, ec::collision_component &moving_collision_ptr, ec::engine &engine);
 }
 }
 #endif

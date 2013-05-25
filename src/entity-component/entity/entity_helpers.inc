@@ -3,7 +3,7 @@
 #include "../component/input_component.hpp"
 #include "../component/movement_component.hpp"
 #include "../component/sprite_component.hpp"
-
+#include "../component/collision_component.hpp"
 
 //===----------------------------------------------------------------------===//
 //
@@ -71,4 +71,15 @@ inline ec::sprite_component*
 ec::entity_helpers::get_sprite_component(entity *const entity_ptr)
 {
   return get_component<sprite_component>(entity_ptr);
+}
+
+//===----------------------------------------------------------------------===//
+// 
+// Wrapper for getting the sprite_component from an entity. 
+//
+//===----------------------------------------------------------------------===//
+inline ec::collision_component*
+ec::entity_helpers::get_collision_component(entity *const entity_ptr)
+{
+  return get_component<collision_component>(entity_ptr);
 }
