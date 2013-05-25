@@ -59,6 +59,7 @@
     <Import Project="..\..\props\(linker)-sfml-binaries(debug).props" />
     <Import Project="..\..\props\(linker)-boost-log-binay.props" />
     <Import Project="..\..\props\(linker)-ec-binaries.props" />
+    <Import Project="..\..\props\(compiler)-boost-headers.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">

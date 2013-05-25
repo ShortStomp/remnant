@@ -38,7 +38,7 @@ ec::entity::add_component(
 
   if(component_ptr_inside_vector != nullptr) {
     // component type already added to this entity, error.
-    __debugbreak();
+    //__debugbreak();
   }
 
   // set the components parent to the entity
