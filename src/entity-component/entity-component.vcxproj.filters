@@ -34,6 +34,9 @@
     <ClCompile Include="system\collision_system.cpp">
       <Filter>system</Filter>
     </ClCompile>
+    <ClCompile Include="component\collision_component.cpp">
+      <Filter>component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.hpp" />
@@ -103,15 +106,12 @@
     <ClInclude Include="component\transform_component.hpp">
       <Filter>component</Filter>
     </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="component\parent_component.hpp">
+    <ClInclude Include="component\collision_component.hpp">
       <Filter>component</Filter>
     </ClInclude>
     <ClInclude Include="system\collision_system.hpp">
       <Filter>system</Filter>
     </ClInclude>
-=======
->>>>>>> fetch_head
   </ItemGroup>
   <ItemGroup>
     <Filter Include="component">
