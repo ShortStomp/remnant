@@ -12,7 +12,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tetris", "src\tetris\tetris.vcxproj", "{788D355B-EE19-4DBD-B18C-F9807F7E763A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{3AF0345A-B08E-4E08-BFDD-C3B325506786} = {3AF0345A-B08E-4E08-BFDD-C3B325506786}
+		{7FE0E483-EFAA-4B68-8710-4167AF4D015F} = {7FE0E483-EFAA-4B68-8710-4167AF4D015F}
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "input-system", "src\input-system\input-system.vcxproj", "{7FE0E483-EFAA-4B68-8710-4167AF4D015F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +51,17 @@ Global
 		{788D355B-EE19-4DBD-B18C-F9807F7E763A}.Release|Win32.Build.0 = Release|Win32
 		{788D355B-EE19-4DBD-B18C-F9807F7E763A}.Release|x64.ActiveCfg = Release|x64
 		{788D355B-EE19-4DBD-B18C-F9807F7E763A}.Release|x64.Build.0 = Release|x64
+		{7FE0E483-EFAA-4B68-8710-4167AF4D015F}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{7FE0E483-EFAA-4B68-8710-4167AF4D015F}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{7FE0E483-EFAA-4B68-8710-4167AF4D015F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7FE0E483-EFAA-4B68-8710-4167AF4D015F}.Debug|Win32.Build.0 = Debug|Win32
+		{7FE0E483-EFAA-4B68-8710-4167AF4D015F}.Debug|x64.ActiveCfg = Debug|x64
+		{7FE0E483-EFAA-4B68-8710-4167AF4D015F}.Debug|x64.Build.0 = Debug|x64
+		{7FE0E483-EFAA-4B68-8710-4167AF4D015F}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{7FE0E483-EFAA-4B68-8710-4167AF4D015F}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{7FE0E483-EFAA-4B68-8710-4167AF4D015F}.Release|Win32.ActiveCfg = Release|Win32
+		{7FE0E483-EFAA-4B68-8710-4167AF4D015F}.Release|Win32.Build.0 = Release|Win32
+		{7FE0E483-EFAA-4B68-8710-4167AF4D015F}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

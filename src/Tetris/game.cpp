@@ -2,7 +2,6 @@
 #include <boost\log\trivial.hpp>
 #include "..\entity-component\\engine.hpp"
 #include "..\entity-component\system\message_system.hpp"
-#include "..\entity-component\system\input_system.hpp"
 #include "..\entity-component\system\movement_system.hpp"
 #include "..\entity-component\system\graphics_system.hpp"
 #include "..\entity-component\system\gravity_system.hpp"
@@ -10,6 +9,8 @@
 #include "..\entity-component\entity\entity_factory.hpp"
 #include "..\entity-component\component\component_factory.hpp"
 #include <SFML\Graphics\Texture.hpp>
+#include "tetris_block.hpp"
+#include "movable_tetris_block.hpp"
 #include "game.hpp"
 
 void
@@ -265,7 +266,23 @@ tet::game::game_loop(ec::engine &engine)
 
   setup_window(engine);
 
-  sf::Texture texture;
+  const auto t1_origin = sf::Vector2f(50.0f, 50.0f);
+
+  tet::tetris_block block1;
+  block1.add_block(t1_origin);
+  block1.add_block(sf::Vector2f(t1_origin.x + 8.0f, t1_origin.y));
+  block1.add_block(sf::Vector2f(t1_origin.x + 16.0f, t1_origin.y));
+  block1.add_block(sf::Vector2f(t1_origin.x + 12.0f, t1_origin.y + 8.0f));
+  block1.add_block(sf::Vector2f(t1_origin.x + 12.0f, t1_origin.y + 16.0f));
+  block1.add_block(sf::Vector2f(t1_origin.x + 24.0f, t1_origin.y));
+  //engine.TetrisBlocks.emplace_back(block1);
+
+  tet::movable_tetris_block movable_block(engine.Input_System);
+  movable_block.add_block(sf::Vector2f(25.0f, 10.0f));
+  engine.MovableTetrisBlocks.emplace_back(movable_block);
+
+  
+  /*sf::Texture texture;
   const auto result = texture.loadFromFile("../../assets/tetris-block.png");
   if(result == false) { __debugbreak(); }
 
@@ -279,7 +296,7 @@ tet::game::game_loop(ec::engine &engine)
   sg2.move(100, 100);
   add_sprite_to_sg(sg2, texture, std::make_pair(2.5f, 2.5f));
   add_sprite_to_sg(sg2, texture, std::make_pair(5.0f, 5.0f));
-  engine.SpriteGroups.emplace_back(sg2);
+  engine.SpriteGroups.emplace_back(sg2);*/
   //setup_test_code(engine);
   
   /*const auto parent_entity = engine.Entities.front();
@@ -318,8 +335,10 @@ tet::game::game_loop(ec::engine &engine)
     engine.Elapsed_Time = clock_instance.restart().asSeconds();
 
     message_system::process_messages(engine);
+
+    engine.Input_System.notify_subscribers(engine.Window);
     
-    input_system::process_input(engine, finished);
+    //input_system::process_input(engine, finished);
 
     //gravity_system::apply_gravitational_forces(engine);
 

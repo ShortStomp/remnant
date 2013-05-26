@@ -30,6 +30,9 @@ namespace ec
     // methods
     void push_back(const sf::Sprite &sprite);
 
+    // methods (hiding base class methods)
+    void move(const sf::Vector2f &offset);
+
     // virtual overloads
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
   };

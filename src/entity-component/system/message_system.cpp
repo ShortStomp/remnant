@@ -5,7 +5,6 @@
 #include "../messages/message.hpp"
 #include "../messages/move_message.hpp"
 
-#include "../system/input_system.hpp"
 #include "../system/movement_system.hpp"
 
 #include "../entity/entity_helpers.hpp"

@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{788D355B-EE19-4DBD-B18C-F9807F7E763A}</ProjectGuid>
-    <RootNamespace>Tetris</RootNamespace>
+    <ProjectGuid>{7FE0E483-EFAA-4B68-8710-4167AF4D015F}</ProjectGuid>
+    <RootNamespace>inputsystem</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -30,7 +30,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -52,25 +52,19 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="..\..\props\(compiler)-output-directory.props" />
     <Import Project="..\..\props\(compiler)-sfml-headers.props" />
-    <Import Project="..\..\props\(linker)-sfml-binaries(debug).props" />
-    <Import Project="..\..\props\(linker)-boost-log-binay.props" />
-    <Import Project="..\..\props\(linker)-ec-binaries.props" />
-    <Import Project="..\..\props\(linker)-input-system-binaries.props" />
-    <Import Project="..\..\props\(compiler)-boost-headers.props" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="..\..\props\(compiler)-output-directory.props" />
     <Import Project="..\..\props\(compiler)-sfml-headers.props" />
-    <Import Project="..\..\props\(linker)-sfml-binaries(debug).props" />
-    <Import Project="..\..\props\(linker)-ec-binaries.props" />
-    <Import Project="..\..\props\(linker)-boost-log-binay.props" />
-    <Import Project="..\..\props\(linker)-input-system-binaries.props" />
-    <Import Project="..\..\props\(compiler)-boost-headers.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
@@ -123,15 +117,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="game.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="movable_tetris_block.cpp" />
-    <ClCompile Include="tetris_block.cpp" />
+    <ClCompile Include="ikeypress_interface.cpp" />
+    <ClCompile Include="input_system.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game.hpp" />
-    <ClInclude Include="movable_tetris_block.hpp" />
-    <ClInclude Include="tetris_block.hpp" />
+    <ClInclude Include="ikeypress_interface.hpp" />
+    <ClInclude Include="input_system.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

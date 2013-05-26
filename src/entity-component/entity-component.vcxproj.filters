@@ -25,9 +25,6 @@
     <ClCompile Include="system\message_system.cpp">
       <Filter>messages</Filter>
     </ClCompile>
-    <ClCompile Include="system\input_system.cpp">
-      <Filter>system</Filter>
-    </ClCompile>
     <ClCompile Include="system\movement_system.cpp">
       <Filter>system</Filter>
     </ClCompile>
@@ -77,9 +74,6 @@
     <ClInclude Include="component\icomponent.hpp">
       <Filter>component</Filter>
     </ClInclude>
-    <ClInclude Include="component\input_component.hpp">
-      <Filter>component</Filter>
-    </ClInclude>
     <ClInclude Include="messages\message.hpp">
       <Filter>messages</Filter>
     </ClInclude>
@@ -88,9 +82,6 @@
     </ClInclude>
     <ClInclude Include="messages\move_message.hpp">
       <Filter>messages</Filter>
-    </ClInclude>
-    <ClInclude Include="system\input_system.hpp">
-      <Filter>system</Filter>
     </ClInclude>
     <ClInclude Include="component\movement_component.hpp">
       <Filter>component</Filter>
@@ -111,6 +102,9 @@
       <Filter>system</Filter>
     </ClInclude>
     <ClInclude Include="sprite_group.hpp" />
+    <ClInclude Include="component\input_component.hpp">
+      <Filter>component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="component">

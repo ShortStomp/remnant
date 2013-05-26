@@ -3,8 +3,12 @@
   <ItemGroup>
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="tetris_block.cpp" />
+    <ClCompile Include="movable_tetris_block.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.hpp" />
+    <ClInclude Include="tetris_block.hpp" />
+    <ClInclude Include="movable_tetris_block.hpp" />
   </ItemGroup>
 </Project>

@@ -44,8 +44,12 @@ ec::graphics_system::update_screen(ec::engine &engine)
   engine.Window.clear();
 
   // draw everything here
-  for(const auto sg : engine.SpriteGroups) {
-    engine.Window.draw(sg);
+  for(const auto block : engine.TetrisBlocks) {
+    engine.Window.draw(block);
+  }
+
+  for(const auto mblock : engine.MovableTetrisBlocks) {
+    engine.Window.draw(mblock);
   }
 
   /*  for(const auto entity_ptr : engine.Sprites) {
