@@ -133,6 +133,7 @@
     <ClCompile Include="entity\entity_factory.cpp" />
     <ClCompile Include="entity\entity_id.cpp" />
     <ClCompile Include="messages\message.cpp" />
+    <ClCompile Include="sprite_group.cpp" />
     <ClCompile Include="system\collision_system.cpp" />
     <ClCompile Include="system\graphics_system.cpp" />
     <ClCompile Include="system\gravity_system.cpp" />
@@ -147,7 +148,6 @@
     <ClInclude Include="component\icomponent.hpp" />
     <ClInclude Include="component\input_component.hpp" />
     <ClInclude Include="component\movement_component.hpp" />
-    <ClInclude Include="component\sprite_component.hpp" />
     <ClInclude Include="component\transform_component.hpp" />
     <ClInclude Include="engine.hpp" />
     <ClInclude Include="entity\entity.hpp" />
@@ -158,6 +158,7 @@
     <ClInclude Include="messages\message.hpp" />
     <ClInclude Include="messages\move_message.hpp" />
     <ClInclude Include="messages\rotation_message.hpp" />
+    <ClInclude Include="sprite_group.hpp" />
     <ClInclude Include="system\collision_system.hpp" />
     <ClInclude Include="system\graphics_system.hpp" />
     <ClInclude Include="system\gravity_system.hpp" />

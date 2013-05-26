@@ -9,6 +9,7 @@
 #include "..\entity-component\\system\collision_system.hpp"
 #include "..\entity-component\entity\entity_factory.hpp"
 #include "..\entity-component\component\component_factory.hpp"
+#include <SFML\Graphics\Texture.hpp>
 #include "game.hpp"
 
 void
@@ -70,8 +71,10 @@ set_game_border_parent(ec::engine &engine)
 
   engine.Entities.emplace_back(entity_instance);   
 }
+
+
 void
-  add_top_bottom_wall_to_border(ec::engine &engine, ec::entity *parent_entity_ptr, const sf::Vector2f &offset)
+add_top_bottom_wall_to_border(ec::engine &engine, ec::entity *parent_entity_ptr, const sf::Vector2f &offset)
 {
    using namespace ec;
 
@@ -80,7 +83,7 @@ void
   
   e0->Parent = parent_entity_ptr;
 
-  const component_factory<sprite_component> sprite_cfactory;
+  /*const component_factory<sprite_component> sprite_cfactory;
   
   auto spritecomponent_ptr = sprite_cfactory.get();
   const auto load_result = spritecomponent_ptr->Texture.loadFromFile("../../assets/bottom_top_border.png");
@@ -89,8 +92,8 @@ void
     __debugbreak();
   }
 
-  spritecomponent_ptr->Sprite.setTexture(spritecomponent_ptr->Texture);
-  e0->add_component(spritecomponent_ptr); 
+  spritecomponent_ptr->setTexture(spritecomponent_ptr->Texture);
+  //e0->add_component(spritecomponent_ptr); 
   
   const component_factory<transform_component> transform_cfactory;
   const auto shared_transform_component_ptr = transform_cfactory.get();
@@ -114,12 +117,14 @@ void
 
   e0->add_component(collisioncomponent_ptr);
   
-  engine.Entities.emplace_back(e0);
+  engine.Entities.emplace_back(e0);*/
 }
+
+/*
 void 
-  add_left_right_wall_to_border(ec::engine &engine, ec::entity *parent_entity_ptr, const sf::Vector2f &offset)
+add_left_right_wall_to_border(ec::engine &engine, ec::entity *parent_entity_ptr, const sf::Vector2f &offset)
 {
-     using namespace ec;
+  using namespace ec;
 
   const entity_factory ef;
   const auto e0 = ef.get();
@@ -135,8 +140,8 @@ void
     __debugbreak();
   }
 
-  spritecomponent_ptr->Sprite.setTexture(spritecomponent_ptr->Texture);
-  e0->add_component(spritecomponent_ptr); 
+  spritecomponent_ptr->setTexture(spritecomponent_ptr->Texture);
+  ////e0->add_component(spritecomponent_ptr); 
   
   const component_factory<transform_component> transform_cfactory;
   const auto shared_transform_component_ptr = transform_cfactory.get();
@@ -181,8 +186,10 @@ add_test_L_block_to_engine(ec::engine &engine, ec::entity *parent_entity_ptr, co
     __debugbreak();
   }
 
-  spritecomponent_ptr->Sprite.setTexture(spritecomponent_ptr->Texture);
-  e0->add_component(spritecomponent_ptr); 
+  spritecomponent_ptr->setTexture(spritecomponent_ptr->Texture);
+  
+  engine.Sprites.emplace_back(spritecomponent_ptr);
+  //e0->add_component(spritecomponent_ptr); 
   
   const component_factory<transform_component> transform_cfactory;
   const auto shared_transform_component_ptr = transform_cfactory.get();
@@ -215,7 +222,7 @@ add_test_L_block_to_engine(ec::engine &engine, ec::entity *parent_entity_ptr, co
   
   engine.Entities.emplace_back(e0);
 
-}
+}*/
 
 //===----------------------------------------------------------------------===//
 //
@@ -233,6 +240,17 @@ setup_window(ec::engine &engine)
   engine.Window.setVerticalSyncEnabled(true);
 }
 
+
+void
+add_sprite_to_sg(ec::sprite_group &sg, sf::Texture &texture, const std::pair<float, float> &coord)
+{
+  sf::Sprite sprite;
+  sprite.setTexture(texture);
+  sprite.move(coord.first, coord.second);
+
+  sg.push_back(sprite);
+}
+
 //===----------------------------------------------------------------------===//
 //
 // The main game loop. When this function exits the game is over. The game loop
@@ -241,16 +259,30 @@ setup_window(ec::engine &engine)
 //
 //===----------------------------------------------------------------------===///
 void
-tet::game::game_loop(
-  ec::engine &engine
-  )
+tet::game::game_loop(ec::engine &engine)
 {
   using namespace ec;
 
   setup_window(engine);
-  setup_test_code(engine);
+
+  sf::Texture texture;
+  const auto result = texture.loadFromFile("../../assets/tetris-block.png");
+  if(result == false) { __debugbreak(); }
+
+  ec::sprite_group sg1;
+  sg1.move(20, 20);
+  add_sprite_to_sg(sg1, texture, std::make_pair(1.0f, 5.0f));
+  add_sprite_to_sg(sg1, texture, std::make_pair(1.0f, 10.0f));
+  engine.SpriteGroups.emplace_back(sg1);
+
+  ec::sprite_group sg2;
+  sg2.move(100, 100);
+  add_sprite_to_sg(sg2, texture, std::make_pair(2.5f, 2.5f));
+  add_sprite_to_sg(sg2, texture, std::make_pair(5.0f, 5.0f));
+  engine.SpriteGroups.emplace_back(sg2);
+  //setup_test_code(engine);
   
-  const auto parent_entity = engine.Entities.front();
+  /*const auto parent_entity = engine.Entities.front();
   
   const component_factory<collision_component> collision_cfactory;
   auto collisioncomponent_ptr = collision_cfactory.get();
@@ -274,6 +306,8 @@ tet::game::game_loop(
   add_top_bottom_wall_to_border(engine, parent_entity2, sf::Vector2f(-200, 300));
   add_left_right_wall_to_border(engine, parent_entity2, sf::Vector2f(-200, -300));
   add_left_right_wall_to_border(engine, parent_entity2, sf::Vector2f(200, -300));
+
+  */
   
   sf::Clock clock_instance;
   bool finished = false;

@@ -18,23 +18,31 @@
 #include <vector>
 #include <SFML\Graphics\RenderWindow.hpp>
 
+
+#include "sprite_group.hpp"
+
+namespace sf
+{
+  class Sprite;
+}
+
 namespace ec
 {
   // forward declarations
   class entity;
   struct input_component;
-  struct sprite_component;
   struct movement_component;
   struct gravity_component;
 
 struct engine
 {
-  //
   // member variables
   float                 Elapsed_Time;
   sf::RenderWindow      Window;
 
   std::vector<entity*>  Entities;
+
+  std::vector<ec::sprite_group> SpriteGroups;
 };
 
 }

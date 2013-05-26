@@ -37,6 +37,7 @@
     <ClCompile Include="component\collision_component.cpp">
       <Filter>component</Filter>
     </ClCompile>
+    <ClCompile Include="sprite_group.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.hpp" />
@@ -100,9 +101,6 @@
     <ClInclude Include="messages\rotation_message.hpp">
       <Filter>messages</Filter>
     </ClInclude>
-    <ClInclude Include="component\sprite_component.hpp">
-      <Filter>component</Filter>
-    </ClInclude>
     <ClInclude Include="component\transform_component.hpp">
       <Filter>component</Filter>
     </ClInclude>
@@ -112,6 +110,7 @@
     <ClInclude Include="system\collision_system.hpp">
       <Filter>system</Filter>
     </ClInclude>
+    <ClInclude Include="sprite_group.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="component">

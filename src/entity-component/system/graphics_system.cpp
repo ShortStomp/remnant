@@ -1,9 +1,8 @@
 #include "..\engine.hpp"
-#include "..\component\sprite_component.hpp"
 #include "..\entity\entity.hpp"
 //#include <boost\log\trivial.hpp>
 #include "graphics_system.hpp"
-
+#include "../sprite_group.hpp"
 
 //===----------------------------------------------------------------------===//
 //
@@ -45,34 +44,29 @@ ec::graphics_system::update_screen(ec::engine &engine)
   engine.Window.clear();
 
   // draw everything here
-  for(const auto entity_ptr : engine.Entities) {
+  for(const auto sg : engine.SpriteGroups) {
+    engine.Window.draw(sg);
+  }
+
+  /*  for(const auto entity_ptr : engine.Sprites) {
 
     if(entity_ptr == nullptr) { // error
       //BOOST_TRIVIAL_LOG(error) << "Error nullptr entity* in engine.Entities collection." << std::endl;
       __debugbreak();
     }
 
-    const auto sprite_component_ptr = entity_helpers::get_sprite_component(entity_ptr);       // alias
-    const auto transform_component_ptr = entity_helpers::get_transform_component(entity_ptr); // alias
-
-    if(sprite_component_ptr == nullptr) { // nothing to draw
-      continue;
-    }
-
-    if(transform_component_ptr == nullptr) {
-      //BOOST_LOG_TRIVIAL(error) << "Entity with sprite component, missing transform component." << std::endl;
-      __debugbreak();
-    }
-
     // if entity_ptr is a member of a scenegraph, then multiply our transform with the parent's transform.
-    const sf::Transform transform = scenegraph_transform(*transform_component_ptr, entity_ptr->Parent);
+    //const sf::Transform transform = scenegraph_transform(*transform_component_ptr, entity_ptr->Parent);
 
     //sprite_component_ptr->Sprite.setPosition(transform_component_ptr->getPosition());
     //sprite_component_ptr->Sprite.setRotation(transform_component_ptr->getRotation());
     //sprite_component_ptr->Sprite.setScale(transform_component_ptr->getScale());
 
-    engine.Window.draw(sprite_component_ptr->Sprite, transform);
+    //engine.Window.draw(*entity_ptr);
+    //engine.Window.draw(sprite_component_ptr->Sprite, transform);
   }
+
+  */
 
   // current frame ends here
   engine.Window.display();

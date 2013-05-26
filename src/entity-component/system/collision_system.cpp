@@ -14,7 +14,7 @@
 void
 ec::collision_system::update_bounding_boxes(ec::engine &engine)
 {
-  using namespace collision_system;
+  /*using namespace collision_system;
 
   for(const auto entity_ptr : engine.Entities) {
 
@@ -45,6 +45,7 @@ ec::collision_system::update_bounding_boxes(ec::engine &engine)
     collision_ptr->bounding_box = result.transformRect(sprite_ptr->Sprite.getGlobalBounds());
 
   }
+  */
 }
 
 //===----------------------------------------------------------------------===//
@@ -56,7 +57,7 @@ ec::collision_system::update_bounding_boxes(ec::engine &engine)
 //
 //===----------------------------------------------------------------------===//
 void
-  ec::collision_system::is_colliding(ec::entity &moving_entity, ec::movement_component &movement_moving_parent_ptr, ec::collision_component &moving_collision_ptr, ec::engine &engine)
+ec::collision_system::is_colliding(ec::entity &moving_entity, ec::movement_component &movement_moving_parent_ptr, ec::collision_component &moving_collision_ptr, ec::engine &engine)
 {
 
   // Iterate through all of the children checking for actual collisions
