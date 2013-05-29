@@ -1,3 +1,4 @@
+#include <iostream>
 #include "sprite_group.hpp"
 #include <SFML\Graphics\RenderTarget.hpp>
 
@@ -6,19 +7,6 @@ void
 ec::sprite_group::push_back(const sf::Sprite &sprite)
 {
   _container.push_back(sprite);
-}
-
-////////////////////////////////////////////////////////////
-void
-ec::sprite_group::move(const sf::Vector2f &offset)
-{
-  _container.front().move(offset);
-  for(auto &it : _container) {
-    const auto a = it.getPosition();
-    it.move(offset);
-    const auto b = it.getPosition();
-    __debugbreak();
-  }
 }
 
 

@@ -1,5 +1,6 @@
 #include "tetris_block.hpp"
 #include <SFML\Graphics\RenderTarget.hpp>
+#include <boost\log\trivial.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////
 tet::tetris_block::tetris_block(void)
@@ -17,16 +18,19 @@ tet::tetris_block::add_block(const sf::Vector2f &coord)
   sprite.setTexture(_texture);
   sprite.move(coord.x, coord.y);
 
-  _sprite_group.push_back(sprite);
+  push_back(sprite);
 }
 
 
 ////////////////////////////////////////////////////////////
-void
+/*void
 tet::tetris_block::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
-  target.draw(_sprite_group);
-}
+  target.draw();
+  
+  const auto a = _sprite_group.getPosition();
+  BOOST_LOG_TRIVIAL(info) << _sprite_group.getPosition().x << " " << _sprite_group.getPosition().y << std::endl;
+}*/
 
 
 ////////////////////////////////////////////////////////////

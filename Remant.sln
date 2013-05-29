@@ -8,6 +8,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "entity-component", "src\Entity-Component\entity-component.vcxproj", "{3AF0345A-B08E-4E08-BFDD-C3B325506786}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7FE0E483-EFAA-4B68-8710-4167AF4D015F} = {7FE0E483-EFAA-4B68-8710-4167AF4D015F}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tetris", "src\tetris\tetris.vcxproj", "{788D355B-EE19-4DBD-B18C-F9807F7E763A}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -15,7 +18,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tetris", "src\tetris\tetris
 		{7FE0E483-EFAA-4B68-8710-4167AF4D015F} = {7FE0E483-EFAA-4B68-8710-4167AF4D015F}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "input-system", "src\input-system\input-system.vcxproj", "{7FE0E483-EFAA-4B68-8710-4167AF4D015F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "observer_system", "src\observer_system\observer_system.vcxproj", "{7FE0E483-EFAA-4B68-8710-4167AF4D015F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,7 +64,8 @@ Global
 		{7FE0E483-EFAA-4B68-8710-4167AF4D015F}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{7FE0E483-EFAA-4B68-8710-4167AF4D015F}.Release|Win32.ActiveCfg = Release|Win32
 		{7FE0E483-EFAA-4B68-8710-4167AF4D015F}.Release|Win32.Build.0 = Release|Win32
-		{7FE0E483-EFAA-4B68-8710-4167AF4D015F}.Release|x64.ActiveCfg = Release|Win32
+		{7FE0E483-EFAA-4B68-8710-4167AF4D015F}.Release|x64.ActiveCfg = Release|x64
+		{7FE0E483-EFAA-4B68-8710-4167AF4D015F}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

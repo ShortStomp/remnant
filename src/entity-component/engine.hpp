@@ -18,7 +18,7 @@
 #include <vector>
 #include <SFML\Graphics\RenderWindow.hpp>
 
-#include "..\input-system\input_system.hpp"
+#include "..\observer_system\observer_system.hpp"
 #include "sprite_group.hpp"
 #include "..\tetris\tetris_block.hpp"
 #include "..\tetris\movable_tetris_block.hpp"
@@ -41,7 +41,7 @@ struct engine
   // member variables
   float                 Elapsed_Time;
   sf::RenderWindow      Window;
-  ec::input_system      Input_System;
+  obs::observer_system  Input_System;
   std::vector<entity*>  Entities;
 
   std::vector<tet::movable_tetris_block> MovableTetrisBlocks;

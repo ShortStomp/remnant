@@ -20,7 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{7FE0E483-EFAA-4B68-8710-4167AF4D015F}</ProjectGuid>
-    <RootNamespace>inputsystem</RootNamespace>
+    <RootNamespace>observer_system</RootNamespace>
+    <ProjectName>observer_system</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -58,6 +59,9 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="..\..\props\(compiler)-output-directory.props" />
     <Import Project="..\..\props\(compiler)-sfml-headers.props" />
+    <Import Project="..\..\props\(compiler)-boost-headers.props" />
+    <Import Project="..\..\props\(linker)-ec-binaries.props" />
+    <Import Project="..\..\props\(linker)-observer-system.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -65,6 +69,7 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="..\..\props\(compiler)-output-directory.props" />
     <Import Project="..\..\props\(compiler)-sfml-headers.props" />
+    <Import Project="..\..\props\(compiler)-boost-headers.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
@@ -117,12 +122,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ikeypress_interface.cpp" />
-    <ClCompile Include="input_system.cpp" />
+    <ClCompile Include="iobserver.cpp" />
+    <ClCompile Include="observer_handle.cpp" />
+    <ClCompile Include="observer_system.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ikeypress_interface.hpp" />
-    <ClInclude Include="input_system.hpp" />
+    <ClInclude Include="iobserver.hpp" />
+    <ClInclude Include="observer_system.hpp" />
+    <ClInclude Include="observer_handle.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

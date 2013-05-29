@@ -1,4 +1,3 @@
-#include <iostream>
 #include <SFML\System\Vector2.hpp>
 #include "../engine.hpp"
 #include "../messages/move_message.hpp"

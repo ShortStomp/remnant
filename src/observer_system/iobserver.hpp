@@ -12,32 +12,35 @@
 // TODO:
 //
 //===----------------------------------------------------------------------===///
-#ifndef _IKEYPRESS_INTERFACE_HPP_
-#define _IKEYPRESS_INTERFACE_HPP_
+#ifndef _IOBSERVER_HPP_
+#define _IOBSERVER_HPP_
+#include <boost\utility.hpp>
 #include <SFML\Window\Keyboard.hpp>
-namespace ec
+#include "observer_handle.hpp"
+namespace obs
 {
-  // forward declarations
-  class input_system;
-
-  // typedefinitions (remove this, duplicate definition in ikeypress_interface)
-  typedef int handle_type;
-
-  class ikeypress_interface
+  // class declaration
+  class iobserver :
+    private boost::noncopyable
   {
-    handle_type _input_system_handle;
+  protected:
+    // members
+    obs::observer_handle              _handle;
+    obs::observer_system   &_observer_system;
 
   public:
 
     // constructors
-    ikeypress_interface(ec::input_system &input_system);
+    iobserver(observer_system &observer);
+    iobserver(iobserver &&other);
+
 
     // pure virtual destructor
-    virtual ~ikeypress_interface();
+    virtual ~iobserver();
 
     // pure virtual methods
-    virtual void on_key_press(const sf::Keyboard::Key keycode) = 0;
+    virtual void on_notify(const sf::Keyboard::Key keycode) = 0;
 
   };
 }
-#endif // _IKEYPRESS_INTERFACE_HPP_
+#endif // _IOBSERVER_HPP_

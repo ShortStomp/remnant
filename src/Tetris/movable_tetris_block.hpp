@@ -12,24 +12,29 @@
 // TODO: document
 //
 //===----------------------------------------------------------------------===///
-#ifndef _MOVABLE_TETRIS_BLOCK
-#define _MOVABLE_TETRIS_BLOCK
+#ifndef _MOVABLE_TETRIS_BLOCK_
+#define _MOVABLE_TETRIS_BLOCK_
 #include "tetris_block.hpp"
-#include "../input-system/ikeypress_interface.hpp"
+#include "../observer_system/iobserver.hpp"
 namespace tet
 {
   class movable_tetris_block :
     public tetris_block,
-    public ec::ikeypress_interface
+    public obs::iobserver
   {
     
   public:
 
     // constructors
-    movable_tetris_block(ec::input_system &input_system);
+    movable_tetris_block(obs::observer_system &observer_system);
+    movable_tetris_block(const movable_tetris_block &other);
+    movable_tetris_block(movable_tetris_block &&other);
+
+    // destructor
+    ~movable_tetris_block(void);
 
     // virtual method overrides
-    virtual void on_key_press(const sf::Keyboard::Key keycode) override;
+    virtual void on_notify(const sf::Keyboard::Key keycode) override;
   };
 }
-#endif
+#endif // _MOVABLE_TETRIS_BLOCK_

@@ -111,3 +111,20 @@ ec::collision_system::is_colliding(ec::entity &moving_entity, ec::movement_compo
 }
 
 
+////////////////////////////////////////////////////////////
+bool
+ec::collision_system::is_colliding(const sf::FloatRect &a, const sf::FloatRect &b)
+{
+  const auto a_collides_b = a.intersects(b);
+  const auto b_collides_a = b.intersects(a);
+
+  return a_collides_b || b_collides_a;
+  // Set up FloatRects which we can check for interesction in the future.
+  //sf::FloatRect y_movement_bounding_box = collision_moving_ptr->bounding_box;
+  //sf::FloatRect x_movement_bounding_box = collision_moving_ptr->bounding_box;
+
+  // Update FloatRects with velocity.
+  //y_movement_bounding_box.top = collision_moving_ptr->bounding_box.top + movement_moving_parent_ptr.Velocity.y + (movement_moving_parent_ptr.Acceleration.y * engine.Elapsed_Time);
+  //x_movement_bounding_box.left = collision_moving_ptr->bounding_box.left + movement_moving_parent_ptr.Velocity.x + (movement_moving_parent_ptr.Acceleration.x * engine.Elapsed_Time);
+
+}

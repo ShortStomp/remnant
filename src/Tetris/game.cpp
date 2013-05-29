@@ -268,18 +268,29 @@ tet::game::game_loop(ec::engine &engine)
 
   const auto t1_origin = sf::Vector2f(50.0f, 50.0f);
 
-  tet::tetris_block block1;
+  /*tet::tetris_block block1;
   block1.add_block(t1_origin);
   block1.add_block(sf::Vector2f(t1_origin.x + 8.0f, t1_origin.y));
   block1.add_block(sf::Vector2f(t1_origin.x + 16.0f, t1_origin.y));
   block1.add_block(sf::Vector2f(t1_origin.x + 12.0f, t1_origin.y + 8.0f));
   block1.add_block(sf::Vector2f(t1_origin.x + 12.0f, t1_origin.y + 16.0f));
   block1.add_block(sf::Vector2f(t1_origin.x + 24.0f, t1_origin.y));
-  //engine.TetrisBlocks.emplace_back(block1);
+  engine.TetrisBlocks.emplace_back(block1);*/
 
-  tet::movable_tetris_block movable_block(engine.Input_System);
+  /*tet::movable_tetris_block movable_block(engine.Input_System);
   movable_block.add_block(sf::Vector2f(25.0f, 10.0f));
+  movable_block.add_block(sf::Vector2f(30.0f, 12.0f));
   engine.MovableTetrisBlocks.emplace_back(movable_block);
+  */
+  
+  tet::movable_tetris_block mblock(engine.Input_System);
+  engine.MovableTetrisBlocks.push_back(std::move(mblock));
+  engine.MovableTetrisBlocks.front().add_block(sf::Vector2f(25.0f, 10.0f));
+  engine.MovableTetrisBlocks.front().add_block(sf::Vector2f(30.0f, 12.0f));
+
+  {
+    //tet::movable_tetris_block tblock(engine.Input_System);
+  }
 
   
   /*sf::Texture texture;
